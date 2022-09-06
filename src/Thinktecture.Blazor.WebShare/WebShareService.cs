@@ -6,13 +6,11 @@ namespace Thinktecture.Blazor.WebShare
     public class WebShareService : IAsyncDisposable
     {
         private readonly Lazy<ValueTask<IJSInProcessObjectReference>> _moduleTask;
-        private readonly IJSRuntime _jsRuntime;
 
         public WebShareService(IJSRuntime jsRuntime)
         {
             _moduleTask = new(() => jsRuntime.InvokeAsync<IJSInProcessObjectReference>(
                 "import", "./_content/Thinktecture.Blazor.WebShare/Thinktecture.Blazor.WebShare.js"));
-            _jsRuntime = jsRuntime ?? throw new ArgumentNullException(nameof(jsRuntime));
         }
 
         public async Task<bool> IsSupportedAsync(bool basicSupport = false)
@@ -30,7 +28,7 @@ namespace Thinktecture.Blazor.WebShare
         public async Task ShareAsync(WebShareDataModel data)
         {
             var module = await _moduleTask.Value;
-            await module.InvokeAsync<bool>("share", data);
+            await module.InvokeVoidAsync("share", data);
         }
 
         public async ValueTask DisposeAsync()

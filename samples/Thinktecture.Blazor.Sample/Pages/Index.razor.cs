@@ -12,6 +12,13 @@ namespace Thinktecture.Blazor.Sample.Pages
 
         private IJSObjectReference? _module;
 
+        private readonly WebShareDataModel _sampleData = new WebShareDataModel
+        {
+            Title = "Test 1",
+            Text = "Lorem ipsum dolor...",
+            Url = "https://thinktecture.com"
+        };
+
         private bool _isWebShareSupported = false;
         private bool _canShareBasicData = false;
         private bool _canShareFileData = false;
@@ -19,12 +26,7 @@ namespace Thinktecture.Blazor.Sample.Pages
         protected override async Task OnInitializedAsync()
         {
             _isWebShareSupported = await _webShareService.IsSupportedAsync();
-            _canShareBasicData = await _webShareService.CanShareAsync(new WebShareDataModel
-            {
-                Title = "Test 1",
-                Text = "Lorem ipsum dolor...",
-                Url = "https://thinktecture.com"
-            });            
+            _canShareBasicData = await _webShareService.CanShareAsync(_sampleData);            
             await base.OnInitializedAsync();
         }
 
@@ -34,10 +36,8 @@ namespace Thinktecture.Blazor.Sample.Pages
             {
                 _module = await _jsRuntime.InvokeAsync<IJSObjectReference>("import", "./Pages/Index.razor.js");
                 var file = await _module.InvokeAsync<IJSObjectReference>("generateSampleFile");
-                _canShareFileData = await _webShareService.CanShareAsync(new WebShareDataModel
-                {
-                    Files = new[] {file}
-                });
+                _sampleData.Files = new[] { file };
+                _canShareFileData = await _webShareService.CanShareAsync(_sampleData);
 
                 await InvokeAsync(StateHasChanged);
             }
@@ -46,14 +46,18 @@ namespace Thinktecture.Blazor.Sample.Pages
 
         private async Task ShareData()
         {
-            var file = await _module.InvokeAsync<IJSObjectReference>("generateSampleFile");
-            await _webShareService.ShareAsync(new WebShareDataModel
+            if (_module is not null)
             {
-                Title = "Test 1",
-                Text = "Lorem ipsum dolor...",
-                Url = "https://thinktecture.com",
-                Files = new[] { file }
-            });
+                try
+                {
+                    var file = await _module.InvokeAsync<IJSObjectReference>("generateSampleFile");
+                    await _webShareService.ShareAsync(_sampleData);
+                }
+                catch(Exception e)
+                {
+                    await _jsRuntime.InvokeVoidAsync("alert", e.Message);
+                }
+            }
         }
     }
 }

@@ -13,6 +13,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Thinktecture.Blazor.AsyncClipboard\Thinktecture.Blazor.AsyncClipboard.csproj" />
+    <ProjectReference Include="..\..\src\Thinktecture.Blazor.WebShare\Thinktecture.Blazor.WebShare.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
   </ItemGroup>
 

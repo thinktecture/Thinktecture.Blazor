@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thinktecture.Blazor.Sample", "Thinktecture.Blazor.Sample.csproj", "{0C281900-4866-4214-9E5E-BBB65481851B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thinktecture.Blazor.Sample", "Thinktecture.Blazor.Sample.csproj", "{0C281900-4866-4214-9E5E-BBB65481851B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thinktecture.Blazor.WebShare", "..\..\src\Thinktecture.Blazor.WebShare\Thinktecture.Blazor.WebShare.csproj", "{B4B4A3AC-25CB-4E7A-B226-6C9EBFED5564}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thinktecture.Blazor.AsyncClipboard", "..\..\src\Thinktecture.Blazor.AsyncClipboard\Thinktecture.Blazor.AsyncClipboard.csproj", "{6910E70A-F4BA-42D4-A4AE-13C991FEDB0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{0C281900-4866-4214-9E5E-BBB65481851B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C281900-4866-4214-9E5E-BBB65481851B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C281900-4866-4214-9E5E-BBB65481851B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4B4A3AC-25CB-4E7A-B226-6C9EBFED5564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4B4A3AC-25CB-4E7A-B226-6C9EBFED5564}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4B4A3AC-25CB-4E7A-B226-6C9EBFED5564}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4B4A3AC-25CB-4E7A-B226-6C9EBFED5564}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6910E70A-F4BA-42D4-A4AE-13C991FEDB0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6910E70A-F4BA-42D4-A4AE-13C991FEDB0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6910E70A-F4BA-42D4-A4AE-13C991FEDB0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6910E70A-F4BA-42D4-A4AE-13C991FEDB0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,7 +9,7 @@ namespace Thinktecture.Blazor.AsyncClipboard
         public AsyncClipboardService(IJSRuntime jsRuntime)
         {
             moduleTask = new(() => jsRuntime.InvokeAsync<IJSObjectReference>(
-                "import", "./_content/Thinktecture.Blazor.AsyncClipboard/asyncClipboardService.js").AsTask());
+                "import", "./_content/Thinktecture.Blazor.AsyncClipboard/Thinktecture.Blazor.AsyncClipboard.js").AsTask());
         }
 
         public async ValueTask WriteText(string data)

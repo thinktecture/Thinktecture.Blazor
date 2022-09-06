@@ -1,12 +1,20 @@
-﻿using Microsoft.JSInterop;
+﻿using System.Text.Json.Serialization;
+using Microsoft.JSInterop;
 
 namespace Thinktecture.Blazor.WebShare.Models
 {
     public class WebShareDataModel
     {
-        public string Title { get; set; } = string.Empty;
-        public string Text { get; set; } = string.Empty;
-        public string Url { get; set; } = string.Empty;
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Title { get; set; }
+        
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Text { get; set; }
+        
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Url { get; set; }
+        
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public IJSObjectReference[]? Files { get; set; }
     }
 }

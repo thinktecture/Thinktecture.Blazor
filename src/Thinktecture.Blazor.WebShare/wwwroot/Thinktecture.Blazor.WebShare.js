@@ -1,7 +1,5 @@
-export async function isSupported(basic) {
-    return !!basic
-        ? 'share' in navigator
-        : 'share' in navigator && 'canShare' in navigator;
+export function isSupported() {
+    return 'share' in navigator && 'canShare' in navigator;
 }
 
 export function canShare(data) {

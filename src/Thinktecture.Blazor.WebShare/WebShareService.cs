@@ -13,10 +13,10 @@ namespace Thinktecture.Blazor.WebShare
                 "import", "./_content/Thinktecture.Blazor.WebShare/Thinktecture.Blazor.WebShare.js"));
         }
 
-        public async Task<bool> IsSupportedAsync(bool basicSupport = false)
+        public async Task<bool> IsSupportedAsync()
         {
             var module = await _moduleTask.Value;
-            return await module.InvokeAsync<bool>("isSupported", basicSupport);
+            return await module.InvokeAsync<bool>("isSupported");
         }
 
         public async ValueTask<bool> CanShareAsync(WebShareDataModel data)

@@ -17,10 +17,8 @@ namespace Thinktecture.Blazor.WebShare
 
         public async Task<bool> IsSupportedAsync(bool basicSupport = false)
         {
-            return basicSupport
-                ? await _jsRuntime.InvokeAsync<bool>("navigator.hasOwnProperty", "share")
-                : await _jsRuntime.InvokeAsync<bool>("navigator.hasOwnProperty", "share") 
-                    && await _jsRuntime.InvokeAsync<bool>("navigator.hasOwnProperty", "canShare");
+            var module = await _moduleTask.Value;
+            return await module.InvokeAsync<bool>("isSupported", basicSupport);
         }
 
         public async ValueTask<bool> CanShareAsync(WebShareDataModel data)

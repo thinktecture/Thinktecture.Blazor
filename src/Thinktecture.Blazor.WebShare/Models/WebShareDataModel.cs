@@ -7,6 +7,6 @@ namespace Thinktecture.Blazor.WebShare.Models
         public string Title { get; set; } = string.Empty;
         public string Text { get; set; } = string.Empty;
         public string Url { get; set; } = string.Empty;
-        public IEnumerable<IJSObjectReference> Files { get; set; } = new List<IJSObjectReference>();
+        public IJSObjectReference[]? Files { get; set; }
     }
 }

@@ -18,6 +18,7 @@ namespace Thinktecture.Blazor.Sample.Pages
             Text = "Lorem ipsum dolor...",
             Url = "https://thinktecture.com"
         };
+        private readonly WebShareDataModel _fileData = new WebShareDataModel();
 
         private bool _isWebShareSupported = false;
         private bool _canShareBasicData = false;
@@ -26,7 +27,7 @@ namespace Thinktecture.Blazor.Sample.Pages
         protected override async Task OnInitializedAsync()
         {
             _isWebShareSupported = await _webShareService.IsSupportedAsync();
-            _canShareBasicData = await _webShareService.CanShareAsync(_sampleData);
+            _canShareBasicData = _isWebShareSupported ? await _webShareService.CanShareAsync(_sampleData) : false;
             await base.OnInitializedAsync();
         }
 
@@ -36,8 +37,8 @@ namespace Thinktecture.Blazor.Sample.Pages
             {
                 _module = await _jsRuntime.InvokeAsync<IJSObjectReference>("import", "./Pages/WebShare.razor.js");
                 var file = await _module.InvokeAsync<IJSObjectReference>("generateSampleFile");
-                _sampleData.Files = new[] { file };
-                _canShareFileData = await _webShareService.CanShareAsync(_sampleData);
+                _fileData.Files = new[] { file };
+                _canShareFileData = _isWebShareSupported ? await _webShareService.CanShareAsync(_sampleData) : false;
 
                 await InvokeAsync(StateHasChanged);
             }
@@ -48,15 +49,7 @@ namespace Thinktecture.Blazor.Sample.Pages
         {
             if (_module is not null)
             {
-                try
-                {
-                    var file = await _module.InvokeAsync<IJSObjectReference>("generateSampleFile");
-                    await _webShareService.ShareAsync(_sampleData);
-                }
-                catch (Exception e)
-                {
-                    await _jsRuntime.InvokeVoidAsync("alert", e.Message);
-                }
+                await _webShareService.ShareAsync(_fileData);
             }
         }
     }

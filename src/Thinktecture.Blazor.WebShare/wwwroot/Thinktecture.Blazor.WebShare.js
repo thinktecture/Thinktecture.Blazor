@@ -4,15 +4,10 @@ export async function isSupported(basic) {
         : 'share' in navigator && 'canShare' in navigator;
 }
 
-export async function canShare(data) {
-    if (data.files) {
-        return navigator.canShare(data);
-    } else {
-        const items = { title: data.title, text: data.text, url: data.url }
-        return navigator.canShare(items);
-    }
+export function canShare(data) {
+    return navigator.canShare(data);
 }
 
-export async function share(data) {
-    await navigator.share(data);
+export function share(data) {
+    return navigator.share(data);
 }

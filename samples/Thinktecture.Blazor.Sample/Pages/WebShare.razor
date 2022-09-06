@@ -1,0 +1,9 @@
+﻿@page "/web-share"
+
+<p>Webshare is supported? @(_isWebShareSupported ? "ja" : "nein")</p>
+<p>Webshare can share basic data? @(_canShareBasicData ? "ja" : "nein")</p>
+<p>Webshare can share file data? @(_canShareFileData ? "ja" : "nein")</p>
+
+<button @onclick="ShareData">Share</button>
+
+

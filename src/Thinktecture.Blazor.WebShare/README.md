@@ -16,6 +16,10 @@ You need .NET 6.0 or newer to use this library.
 
 [Download .NET 6](https://dotnet.microsoft.com/download/dotnet/6.0)
 
+### Platform Support
+
+![Platform support for Web Share API](https://caniuse.bitsofco.de/image/web-share.png)
+
 ### Installation
 
 You can install the package via NuGet with the Package Manager in your IDE or alternatively using the command line:

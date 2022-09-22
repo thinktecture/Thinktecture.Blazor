@@ -49,6 +49,14 @@ namespace Thinktecture.Blazor.Sample.Pages
         {
             if (_module is not null)
             {
+                await _webShareService.ShareAsync(_sampleData);
+            }
+        }
+
+        private async Task ShareFiles()
+        {
+            if (_module is not null)
+            {
                 await _webShareService.ShareAsync(_fileData);
             }
         }

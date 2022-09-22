@@ -92,7 +92,7 @@ else
 }
 ```
 
-Please note that the `CanShareAsync()` method throws an exception if the `canShare()` JavaScript method is not present in the browser, so make sure that the browser supports the Web Share API first by calling `IsSupportedAsnyc()`.
+Please note that the `CanShareAsync()` method throws an exception if the `canShare()` JavaScript method is not present in the browser, so make sure that the browser supports the Web Share API first by calling `IsSupportedAsync()`.
 
 ### Sharing data
 
@@ -126,7 +126,7 @@ The following JavaScript function generates a plain text file with `foo` as its 
 
 ```js
 export function generateSampleFile() {
-    const blob = new Blob(["foo"], { type: 'text/plain' });
+    const blob = new Blob(['foo'], { type: 'text/plain' });
     return new File([blob], 'text.txt', { type: blob.type });
 }
 ```
@@ -150,7 +150,7 @@ catch (Exception ex)
 }
 ```
 
-Please note that `ShareAsnyc()` may throw an exception for the aforementioned reasons.
+Please note that `ShareAsync()` may throw an exception for the aforementioned reasons.
 
 ## Related articles
 

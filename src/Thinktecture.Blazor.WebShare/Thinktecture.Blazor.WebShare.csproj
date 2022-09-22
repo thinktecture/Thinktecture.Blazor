@@ -4,8 +4,26 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
 
+    <Title>Blazor Web Share API wrapper</Title>
+    <Description>Web Share API wrapper implementation for Blazor.</Description>
+    <PackageId>Thinktecture.Blazor.WebShare</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Patrick Jahr, Christian Liebel</Authors>
+    <Company>Thinktecture</Company>
+    <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>ProjectFugu WebShareAPI WebShare Share Blazor Wasm Wrapper JSInterop</PackageTags>
+    <RepositoryUrl>https://github.com/thinktecture/Thinktecture.Blazor</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <None Include="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <SupportedPlatform Include="browser" />

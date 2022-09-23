@@ -124,7 +124,7 @@ To read text from the clipboard, use the `ReadTextAsync()` method:
 ```csharp
 try
 {
-    const text = await asyncClipboardService.ReadTextAsync();
+    var text = await asyncClipboardService.ReadTextAsync();
     // do something with the text
 }
 catch (Exception ex)
@@ -140,13 +140,13 @@ Please note that the user may need to confirm a permission request first, and re
 To write text to the clipboard, use the `ReadAsync()` method:
 
 ```csharp
-const clipboardItems = await asyncClipboardService.ReadAsync();
-const imageItem = clipboardItems.Find(c => c.Types.Contains("image/png"));
-if (imageItem)
+var clipboardItems = await asyncClipboardService.ReadAsync();
+var imageItem = clipboardItems.FirstOrDefault(c => c.Types.Contains("image/png"));
+if (imageItem is not null)
 {
     try
     {
-        const pngBlob = await imageItem.GetType("image/png");
+        var pngBlob = await imageItem.GetTypeAsync("image/png");
         // do something with the data
     }
     catch (Exception ex)

@@ -8,7 +8,8 @@
     <Title>Blazor Web Share API wrapper</Title>
     <Description>Web Share API wrapper implementation for Blazor.</Description>
     <PackageId>Thinktecture.Blazor.WebShare</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
+    <PackageIcon>icon.png</PackageIcon>
     <Authors>Patrick Jahr, Christian Liebel</Authors>
     <Company>Thinktecture</Company>
     <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
@@ -20,6 +21,10 @@
   
   <ItemGroup>
     <None Include="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\icon.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>

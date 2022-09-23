@@ -3,8 +3,6 @@ export function writeText(data) {
 }
 
 export function write(data) {
-    // TODO: Chromium/Safari promise problem
-    // https://bugs.webkit.org/show_bug.cgi?id=222262#c5
     return navigator.clipboard.write(data);
 }
 
@@ -21,7 +19,15 @@ export function isSupported() {
 }
 
 export function getClipboardItems(clipboardItems) {
-    return clipboardItems.map(({items, options}) => new ClipboardItem(items, options));
+    return clipboardItems.map(({ items, options }) => new ClipboardItem(items, options));
+}
+
+export function getClipboardItemTypes(clipboardItem) {
+    return clipboardItem.types;
+}
+
+export function getClipboardItemOptions(clipboardItem) {
+    return { presentationStyle: clipboardItem.presentationStyle };
 }
 
 export function getArrayLength(array) {

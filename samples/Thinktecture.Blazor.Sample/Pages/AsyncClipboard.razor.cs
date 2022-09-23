@@ -31,7 +31,7 @@ namespace Thinktecture.Blazor.Sample.Pages
             var blobPromise = _asyncClipboardService.GetObjectReference(_module!, "getBlazorLogoBlobPromise");
             await _asyncClipboardService.WriteAsync(new []
             {
-                new ClipboardItem(new Dictionary<string, object>
+                new ClipboardItem(new Dictionary<string, IJSObjectReference>
                 {
                     { "image/png", blobPromise }
                 }, new ClipboardItemOptions { PresentationStyle = PresentationStyle.Attachment })

@@ -165,4 +165,4 @@ Please note that `ShareAsync()` may throw an exception for the aforementioned re
 ## Acknowledgements
 
 Thanks to [Kristoffer Strube](https://twitter.com/kstrubeg) who provides [a Blazor wrapper for the File System Access API](https://github.com/KristofferStrube/Blazor.FileSystemAccess).
-This library is inspired by Kristoffer’s implementation and project setup.
+This library is inspired by Kristoffer's implementation and project setup.

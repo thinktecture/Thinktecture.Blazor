@@ -6,7 +6,8 @@
 
 A Blazor wrapper for the [Async Clipboard API](https://www.w3.org/TR/clipboard-apis/).
 
-The Async Clipboard API allows you to copy and paste text, images and other data from or to the system's clipboard.
+The Async Clipboard API allows you to write and read text, images and other data from or to the system's clipboard.
+The supported types vary from platform to platform.
 
 ## Getting Started
 
@@ -70,7 +71,92 @@ This method allows copying (more or less) arbitrary data to the clipboard.
 Please note that Firefox only supports the `writeText()` method which writes plain text to the clipboard.
 If you want to support browsers that only ship with support for `writeText()`, please implement a custom check.
 
-### TODO
+### Writing text to the clipboard
+
+To write text to the clipboard, use the `WriteTextAsync()` method:
+
+```csharp
+await asyncClipboardService.WriteTextAsync("Hello world");
+```
+
+Please note that writing to the clipboard may fail, e.g., because the user denied the permission to access the clipboard.
+
+### Writing data to the clipboard
+
+To write text to the clipboard, use the `WriteAsync()` method.
+The method takes a list of clipboard items.
+Each clipboard item can take multiple representations of the same item.
+It so takes a dictionary of media types matched to an IJSObjectReference that points to either a JavaScript string or Blob.
+Optionally, you can pass `ClipboardItemOptions` to the item.
+Currently, this only allows you to define the presentation style of the pasted item, i.e., if the content should be added inline or as an attachment.
+If no value is given, the `PresentationStyle` property contains the value `"unspecified"`.
+
+> **Important note:** All items must be passed synchronously to the `WriteAsync()` method, i.e., it _must_ be the first awaited call within your event handler.
+> If you need to perform asynchronous work to determine the Blob, for example, because you need to scale down image data, perform this logic in a promise.
+> For this purpose, the library offers a `GetObjectReference()` helper method that synchronously returns an `IJSObjectReference`, for example, to point this to a promise.
+
+```csharp
+var textPromise = asyncClipboardService.GetObjectReference(module, "getTextPromise");
+var items = new []
+{
+    new ClipboardItem(new Dictionary<string, IJSObjectReference>
+    {
+        { "text/plain", textPromise }
+    }, new ClipboardItemOptions { PresentationStyle = PresentationStyle.Inline })
+};
+await asyncClipboardService.WriteAsync(items);
+```
+
+With the following JavaScript code:
+
+```js
+export function getTextPromise() {
+    return new Promise((resolve) => resolve("Hello world"));
+}
+```
+
+Please note that writing to the clipboard may fail, e.g., because the user denied the permission to access the clipboard.
+
+### Reading text from the clipboard
+
+To read text from the clipboard, use the `ReadTextAsync()` method:
+
+```csharp
+try
+{
+    const text = await asyncClipboardService.ReadTextAsync();
+    // do something with the text
+}
+catch (Exception ex)
+{
+    // pasting failed (e.g., user denied permission)
+}
+```
+
+Please note that the user may need to confirm a permission request first, and reading may fail, e.g., because the user denied the permission to access the clipboard.
+
+### Reading data from the clipboard
+
+To write text to the clipboard, use the `ReadAsync()` method:
+
+```csharp
+const clipboardItems = await asyncClipboardService.ReadAsync();
+const imageItem = clipboardItems.Find(c => c.Types.Contains("image/png"));
+if (imageItem)
+{
+    try
+    {
+        const pngBlob = await imageItem.GetType("image/png");
+        // do something with the data
+    }
+    catch (Exception ex)
+    {
+        // error while retrieving the data
+    }
+}
+```
+
+Please note that the user may need to confirm a permission request first, and reading may fail, e.g., because the user denied the permission to access the clipboard.
 
 ## Related articles
 
@@ -82,4 +168,4 @@ If you want to support browsers that only ship with support for `writeText()`, p
 ## Acknowledgements
 
 Thanks to [Kristoffer Strube](https://twitter.com/kstrubeg) who provides [a Blazor wrapper for the File System Access API](https://github.com/KristofferStrube/Blazor.FileSystemAccess).
-This library is inspired by Kristoffer’s implementation and project setup.
+This library is inspired by Kristoffer's implementation and project setup.

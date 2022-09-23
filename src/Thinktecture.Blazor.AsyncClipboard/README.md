@@ -9,7 +9,7 @@ A Blazor wrapper for the [Async Clipboard API](https://www.w3.org/TR/clipboard-a
 The Async Clipboard API allows you to write and read text, images and other data from or to the system's clipboard.
 The supported types vary from platform to platform.
 
-## Getting Started
+## Getting started
 
 ### Prerequisites
 
@@ -17,7 +17,7 @@ You need .NET 6.0 or newer to use this library.
 
 [Download .NET 6](https://dotnet.microsoft.com/download/dotnet/6.0)
 
-### Platform Support
+### Platform support
 
 [![Platform support for Async Clipboard API](https://caniuse.bitsofco.de/image/async-clipboard.png)](https://caniuse.com/async-clipboard)
 

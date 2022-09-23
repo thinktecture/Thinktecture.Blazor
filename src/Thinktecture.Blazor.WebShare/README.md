@@ -8,7 +8,7 @@ A Blazor wrapper for the [Web Share API](https://www.w3.org/TR/web-share/).
 
 The Web Share API allows you to share a text, title, URL, or files with another application installed on the user's system via the share functionality provided by the operating system.
 
-## Getting Started
+## Getting started
 
 ### Prerequisites
 
@@ -16,7 +16,7 @@ You need .NET 6.0 or newer to use this library.
 
 [Download .NET 6](https://dotnet.microsoft.com/download/dotnet/6.0)
 
-### Platform Support
+### Platform support
 
 [![Platform support for Web Share API](https://caniuse.bitsofco.de/image/web-share.png)](https://caniuse.com/web-share)
 

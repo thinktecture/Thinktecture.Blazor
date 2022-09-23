@@ -1,0 +1,15 @@
+@page "/async-clipboard"
+
+<h3>Async Clipboard API</h3>
+
+<p>Async Clipboard API is supported? @(_isAsyncClipboardSupported ? "yes" : "no")</p>
+
+<h4>Text</h4>
+
+<button @onclick="CopyText">Copy Text (“Foo”)</button>
+<button @onclick="PasteText">Paste Text (to the console)</button>
+
+<h4>Clipboard Items</h4>
+
+<button @onclick="CopyItems">Copy Items (Blazor logo PNG)</button>
+<button @onclick="PasteItems">Paste Items (to new window)</button>

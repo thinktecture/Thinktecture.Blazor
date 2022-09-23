@@ -31,7 +31,7 @@
 
   <ItemGroup>
     <PackageReference Include="EnumExtensions.System.Text.Json" Version="1.1.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.9" />
   </ItemGroup>
 
 </Project>

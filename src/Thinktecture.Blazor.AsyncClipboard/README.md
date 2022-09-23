@@ -19,7 +19,7 @@ You need .NET 6.0 or newer to use this library.
 
 ### Platform Support
 
-![Platform support for Async Clipboard API](https://caniuse.bitsofco.de/image/async-clipboard.png)
+[![Platform support for Async Clipboard API](https://caniuse.bitsofco.de/image/async-clipboard.png)](https://caniuse.com/async-clipboard)
 
 ### Installation
 

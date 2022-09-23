@@ -18,7 +18,7 @@ You need .NET 6.0 or newer to use this library.
 
 ### Platform Support
 
-![Platform support for Web Share API](https://caniuse.bitsofco.de/image/web-share.png)
+[![Platform support for Web Share API](https://caniuse.bitsofco.de/image/web-share.png)](https://caniuse.com/web-share)
 
 ### Installation
 

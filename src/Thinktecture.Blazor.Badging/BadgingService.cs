@@ -21,18 +21,13 @@ namespace Thinktecture.Blazor.Badging
             var module = await _moduleTask.Value;
             return await module.InvokeAsync<bool>("isSupported");
         }
-        
-        // TODO: Comments
-        // TODO: Readme
 
         /// <summary>
-        /// Determines if the data can be shared via the current user agent.
+        /// Sets a badge on the current app's icon. If a value is passed to this method, it will be set as the value of
+        /// the badge. Otherwise, a generic badge will be shown, as defined by the platform.
         /// </summary>
-        /// <param name="contents">The data that is supposed to be shared.</param>
-        /// <returns>A boolean value indicating if the data can be shared.</returns>
-        /// <exception cref="Exception">
-        /// Throws an exception if the canShare() method is not available on the target platform.
-        /// </exception>
+        /// <param name="contents">The value of the badge.</param>
+        /// <exception cref="Exception">Throws an exception if the action is not supported.</exception>
         public async ValueTask SetAppBadgeAsync(int? contents = null)
         {
             var module = await _moduleTask.Value;
@@ -40,8 +35,9 @@ namespace Thinktecture.Blazor.Badging
         }
 
         /// <summary>
-        /// 
+        /// Clears the badge on the current app's icon.
         /// </summary>
+        /// <exception cref="Exception">Throws an exception if the action is not supported.</exception>
         public async ValueTask ClearAppBadgeAsync()
         {
             var module = await _moduleTask.Value;

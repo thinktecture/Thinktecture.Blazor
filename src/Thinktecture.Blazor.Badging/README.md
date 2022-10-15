@@ -69,15 +69,22 @@ Internally, this method tests for the presence of the `setAppBadge()` and `clear
 
 ### Set app badge
 
-```csharp
-await badgingService.SetAppBadgeAsync();
-```
+The `SetAppBadgeAsync()` method sets a badge on the current app's icon.
+If a value is passed to this method, it will be set as the value of the badge:
 
 ```csharp
 await badgingService.SetAppBadgeAsync(3);
 ```
 
+When omitting the `contents` parameter, a generic badge will be shown, as defined by the platform.
+
+```csharp
+await badgingService.SetAppBadgeAsync();
+```
+
 ### Clear app badge
+
+The `ClearAppBadgeAsync()` method clears the badge on the current app's icon:
 
 ```csharp
 await badgingService.ClearAppBadgeAsync();
@@ -85,7 +92,8 @@ await badgingService.ClearAppBadgeAsync();
 
 ## Related articles
 
-- [Documentation on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/setAppBadge)
+- [setAppBadge() Documentation on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/setAppBadge)
+- [clearAppBadge() Documentation on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/clearAppBadge)
 - [Blog post on web.dev](https://web.dev/badging-api/)
 - [Browser support on caniuse.com](https://caniuse.com/mdn-api_navigator_setappbadge)
 

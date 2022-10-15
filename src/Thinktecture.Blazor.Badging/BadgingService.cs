@@ -23,7 +23,6 @@ namespace Thinktecture.Blazor.Badging
         }
         
         // TODO: Comments
-        // TODO: Test
         // TODO: Readme
 
         /// <summary>
@@ -34,7 +33,7 @@ namespace Thinktecture.Blazor.Badging
         /// <exception cref="Exception">
         /// Throws an exception if the canShare() method is not available on the target platform.
         /// </exception>
-        public async ValueTask SetAppBadgeAsync(int? contents)
+        public async ValueTask SetAppBadgeAsync(int? contents = null)
         {
             var module = await _moduleTask.Value;
             await module.InvokeVoidAsync("setAppBadge", contents);

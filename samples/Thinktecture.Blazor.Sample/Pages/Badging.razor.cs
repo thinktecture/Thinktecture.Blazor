@@ -16,7 +16,7 @@ namespace Thinktecture.Blazor.Sample.Pages
             await base.OnInitializedAsync();
         }
 
-        private async void SetAppBadge(int? content)
+        private async void SetAppBadge(int? content = null)
         {
             await _badgingService.SetAppBadgeAsync(content);
         }

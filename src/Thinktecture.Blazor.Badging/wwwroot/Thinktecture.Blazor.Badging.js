@@ -3,7 +3,7 @@ export function isSupported() {
 }
 
 export function setAppBadge(contents) {
-    return navigator.setAppBadge(contents);
+    return navigator.setAppBadge(contents ?? undefined);
 }
 
 export function clearAppBadge() {

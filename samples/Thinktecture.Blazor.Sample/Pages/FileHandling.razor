@@ -1,0 +1,7 @@
+﻿@page "/file-handling"
+
+<p>Launch Queue is supported? @(_isFileHandlingSupported ? "yes" : "no")</p>
+
+<p>Open a TXT file by right-clicking it in Explorer/Finder and choosing this demo application.</p>
+
+<textarea @bind="_text" readonly></textarea>

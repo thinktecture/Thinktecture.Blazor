@@ -10,6 +10,10 @@ The Async Clipboard API allows you to write and read text, images and other data
 
 The Badging API allows you to display a badge on the installed application’s icon.
 
+## [Thinktecture.Blazor.FileHandling](src/Thinktecture.Blazor.FileHandling/README.md)
+
+The File Handling API allows you to register your Progressive Web App as a file handler for certain file types.
+
 ## [Thinktecture.Blazor.WebShare](src/Thinktecture.Blazor.WebShare/README.md)
 
 The Web Share API allows you to share a text, title, URL, or files with another application installed on the user's system via the share functionality provided by the operating system.

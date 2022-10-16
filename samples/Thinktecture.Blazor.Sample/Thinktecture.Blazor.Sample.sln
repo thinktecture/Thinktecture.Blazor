@@ -10,6 +10,7 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thinktecture.Blazor.AsyncClipboard", "..\..\src\Thinktecture.Blazor.AsyncClipboard\Thinktecture.Blazor.AsyncClipboard.csproj", "{6910E70A-F4BA-42D4-A4AE-13C991FEDB0A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thinktecture.Blazor.Badging", "..\..\src\Thinktecture.Blazor.Badging\Thinktecture.Blazor.Badging.csproj", "{90500527-4062-4CAB-B880-2DCB06B5F119}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thinktecture.Blazor.FileHandling", "..\..\src\Thinktecture.Blazor.FileHandling\Thinktecture.Blazor.FileHandling.csproj", "{F087B354-1D64-4BE0-B216-C08D614D2763}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +34,10 @@ Global
 		{90500527-4062-4CAB-B880-2DCB06B5F119}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90500527-4062-4CAB-B880-2DCB06B5F119}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90500527-4062-4CAB-B880-2DCB06B5F119}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F087B354-1D64-4BE0-B216-C08D614D2763}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F087B354-1D64-4BE0-B216-C08D614D2763}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F087B354-1D64-4BE0-B216-C08D614D2763}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F087B354-1D64-4BE0-B216-C08D614D2763}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

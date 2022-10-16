@@ -1,43 +1,40 @@
 ﻿using Microsoft.JSInterop;
+using Thinktecture.Blazor.FileHandling.Models;
 
 namespace Thinktecture.Blazor.FileHandling
 {
     public class FileHandlingService : IAsyncDisposable
     {
         private readonly Lazy<ValueTask<IJSInProcessObjectReference>> _moduleTask;
+        private readonly DotNetObjectReference<FileHandlingRelay> _relayReference;
 
         public FileHandlingService(IJSRuntime jsRuntime)
         {
             _moduleTask = new(() => jsRuntime.InvokeAsync<IJSInProcessObjectReference>(
-                "import", "./_content/Thinktecture.Blazor.Badging/Thinktecture.Blazor.Badging.js"));
+                "import", "./_content/Thinktecture.Blazor.FileHandling/Thinktecture.Blazor.FileHandling.js"));
+            _relayReference = DotNetObjectReference.Create(new FileHandlingRelay(_moduleTask));
         }
 
         /// <summary>
-        /// Determines if the Badging API is supported on the target user agent.
+        /// Determines if the File Handling API is supported on the target user agent.
         /// </summary>
-        /// <returns>A boolean value indicating if the Badging API is supported.</returns>
+        /// <returns>A boolean value indicating if the File Handling API is supported.</returns>
         public async Task<bool> IsSupportedAsync()
         {
             var module = await _moduleTask.Value;
             return await module.InvokeAsync<bool>("isSupported");
         }
         
-        // TODO: Comments
-        // TODO: Test
-        // TODO: Readme
-
         /// <summary>
-        /// Determines if the data can be shared via the current user agent.
+        /// Sets a consumer function to get access to the <see cref="LaunchParams"/>.
         /// </summary>
-        /// <param name="blazorFn">The data that is supposed to be shared.</param>
-        /// <returns>A boolean value indicating if the data can be shared.</returns>
-        /// <exception cref="Exception">
-        /// Throws an exception if the canShare() method is not available on the target platform.
-        /// </exception>
-        public async ValueTask SetConsumerAsync(Func<int> blazorFn)
+        /// <param name="consumer">The launch consumer.</param>
+        /// <exception cref="Exception">Throws an exception if the action is not supported.</exception>
+        public async ValueTask SetConsumerAsync(Action<LaunchParams> consumer)
         {
+            var consumerReference = DotNetObjectReference.Create(consumer);
             var module = await _moduleTask.Value;
-            await module.InvokeVoidAsync("setConsumer", blazorFn);
+            await module.InvokeVoidAsync("setConsumer", _relayReference, consumerReference);
         }
 
         public async ValueTask DisposeAsync()
@@ -47,6 +44,8 @@ namespace Thinktecture.Blazor.FileHandling
                 var module = await _moduleTask.Value;
                 await module.DisposeAsync();
             }
+            
+            _relayReference.Dispose();
         }
     }
 }

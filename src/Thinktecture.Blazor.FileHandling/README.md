@@ -4,9 +4,9 @@
 
 ## Introduction
 
-A Blazor wrapper for the [Badging API](https://w3c.github.io/badging/).
+A Blazor wrapper for the [File Handling API](https://wicg.github.io/manifest-incubations/#file_handlers-member).
 
-The Badging API allows you to share a text, title, URL, or files with another application installed on the user's system via the share functionality provided by the operating system.
+The File Handling API allows you to register your Progressive Web App as a file handler for certain file types.
 
 ## Getting started
 
@@ -18,14 +18,14 @@ You need .NET 6.0 or newer to use this library.
 
 ### Platform support
 
-[Platform support for Badging API](https://caniuse.com/mdn-api_navigator_setappbadge)
+[Platform support for Badging API](https://caniuse.com/mdn-api_launchqueue)
 
 ### Installation
 
 You can install the package via NuGet with the Package Manager in your IDE or alternatively using the command line:
 
 ```
-dotnet add package Thinktecture.Blazor.Badging
+dotnet add package Thinktecture.Blazor.FileHandling
 ```
 
 ## Usage
@@ -37,27 +37,27 @@ The package can be used in Blazor WebAssembly projects.
 You need to import the package to use it on your pages. This can be achieved by adding the following using statement to `_Imports.razor`:
 
 ```
-@using Thinktecture.Blazor.Badging
+@using Thinktecture.Blazor.FileHandling
 ```
 
 ### Add to service collection
 
-To make the BadgingService available on all pages, register it at the IServiceCollection in `Program.cs` before the host is built:
+To make the FileHandlingService available on all pages, register it at the IServiceCollection in `Program.cs` before the host is built:
 
 ```csharp
-builder.Services.AddBadgingService();
+builder.Services.AddFileHandlingService();
 ```
 
 ### Checking for browser support
 
-Before using the Badging API, you should first test if the API is supported on the target platform by calling the `IsSupportedAsync()` method.
-This method returns a boolean to indicate whether the Badging API is supported or not.
+Before using the File Handling API, you should first test if the API is supported on the target platform by calling the `IsSupportedAsync()` method.
+This method returns a boolean to indicate whether the File Handling API is supported or not.
 
 ```csharp
-var isSupported = await badgingService.IsSupportedAsync();
+var isSupported = await fileHandlingService.IsSupportedAsync();
 if (isSupported)
 {
-    // enable badging feature
+    // enable file handling feature
 }
 else
 {
@@ -65,29 +65,65 @@ else
 }
 ```
 
-Internally, this method tests for the presence of the `setAppBadge()` and `clearAppBadge()` methods on the `navigator` object of the target browser.
+Internally, this method tests for the presence of the `launchQueue` property on the `window` object of the target browser.
 
-### Set app badge
+### Register in Web App Manifest
 
-```csharp
-await badgingService.SetAppBadgeAsync();
+The API consists of two parts:
+First, you need to declare support for the target file types in your Web Application Manifest (typically called _manifest.json_ or _manifest.webmanifest_).
+
+
+```json
+{
+  "file_handlers": [{
+    "action": "./file-handling",
+    "accept": {
+      "text/plain": [".txt"]
+    }
+  }]
+}
 ```
 
-```csharp
-await badgingService.SetAppBadgeAsync(3);
-```
+During installation, the application is registered at the target platform as a handler for the given file types.
 
-### Clear app badge
+### Access launch parameters during runtime
+
+To access the launch parameters during runtime, call the `SetConsumerAsync()` method.
+This method takes an action that is called with the `LaunchParams`.
+This object has a `Files` property that currently directly contains a list of `IJSObjectReference`s for the files.
+These object references point to `FileSystemFileHandle`s in JavaScript.
+To get the binary contents of the files, call the `getFile()` method on the `FileSystemFileHandle`.
+This returns the JavaScript `File` object that offers methods like `text()` and `arrayBuffer()` to retrieve the file's contents ([documentation](https://developer.mozilla.org/en-US/docs/Web/API/File)).
 
 ```csharp
-await badgingService.ClearAppBadgeAsync();
+var isSupported = await fileHandlingService.IsSupportedAsync();
+if (isSupported)
+{
+    await _fileHandlingService.SetConsumerAsync(async (launchParams) =>
+    {
+        foreach (var fileSystemFileHandle in launchParams.Files)
+        {
+            var file = await fileSystemFileHandle.InvokeAsync<IJSObjectReference>("getFile", null);
+            
+            var text = await file.InvokeAsync<string>("text", null);
+            Console.WriteLine(text);
+            
+            var jsStream = await file.InvokeAsync<IJSStreamReference>("arrayBuffer", null);
+            var stream = await jsStream.OpenReadStreamAsync();
+            var streamReader = new StreamReader(stream);
+            var text2 = await streamReader.ReadToEndAsync();
+            Console.WriteLine(text2);
+        }
+    });
+}
 ```
 
 ## Related articles
 
-- [Documentation on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/setAppBadge)
-- [Blog post on web.dev](https://web.dev/badging-api/)
-- [Browser support on caniuse.com](https://caniuse.com/mdn-api_navigator_setappbadge)
+- [WICG Specification (`file_handlers` member)](https://wicg.github.io/manifest-incubations/#file_handlers-member)
+- [WICG Specification (launch queue)](https://wicg.github.io/manifest-incubations/#launch-queue-and-launch-params)
+- [Blog post on web.dev](https://web.dev/file-handling/)
+- [Browser support on caniuse.com](https://caniuse.com/mdn-api_launchqueue)
 
 ## Acknowledgements
 

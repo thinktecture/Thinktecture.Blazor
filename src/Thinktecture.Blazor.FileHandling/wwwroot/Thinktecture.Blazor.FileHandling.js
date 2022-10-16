@@ -1,7 +1,24 @@
+let launchParams = null;
+
 export function isSupported() {
     return 'launchQueue' in window;
 }
 
-export function setConsumer(blazorFn) {
-    window.launchQueue.setConsumer(params => blazorFn(params));
+export function setConsumer(component, consumerRef) {
+    window.launchQueue.setConsumer(params => {
+        launchParams = params;
+        component.invokeMethodAsync("InvokeConsumer", consumerRef);
+    });
+}
+
+// The following two methods are used by the FileHandlingRelay.
+// Workaround for https://github.com/dotnet/aspnetcore/issues/26049
+export function getFiles() {
+    const files = launchParams.files;
+    launchParams = null;
+    return files;
+}
+
+export function getArrayLength(array) {
+    return array.length;
 }

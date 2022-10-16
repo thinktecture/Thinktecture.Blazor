@@ -71,12 +71,14 @@ Internally, this method tests for the presence of the `launchQueue` property on 
 
 The API consists of two parts:
 First, you need to declare support for the target file types in your Web Application Manifest (typically called _manifest.json_ or _manifest.webmanifest_).
-
+The property `file_handlers` contains an array of file handlers.
+Each file handler consists of the list of accepted media types and file extensions (`accept` property).
+The `action` property contains the address that should be launched when a file with the particular media type or file extension was opened.
 
 ```json
 {
   "file_handlers": [{
-    "action": "./file-handling",
+    "action": "./",
     "accept": {
       "text/plain": [".txt"]
     }
@@ -89,11 +91,11 @@ During installation, the application is registered at the target platform as a h
 ### Access launch parameters during runtime
 
 To access the launch parameters during runtime, call the `SetConsumerAsync()` method.
-This method takes an action that is called with the `LaunchParams`.
+This method takes an action that is immediately called with the `LaunchParams`.
 This object has a `Files` property that currently directly contains a list of `IJSObjectReference`s for the files.
-These object references point to `FileSystemFileHandle`s in JavaScript.
+These object references point to `FileSystemFileHandle` objects in JavaScript.
 To get the binary contents of the files, call the `getFile()` method on the `FileSystemFileHandle`.
-This returns the JavaScript `File` object that offers methods like `text()` and `arrayBuffer()` to retrieve the file's contents ([documentation](https://developer.mozilla.org/en-US/docs/Web/API/File)).
+This returns the JavaScript `File` object that offers methods like `text()` and `arrayBuffer()` to retrieve the file's contents ([File API](https://developer.mozilla.org/en-US/docs/Web/API/File)).
 
 ```csharp
 var isSupported = await fileHandlingService.IsSupportedAsync();

@@ -1,0 +1,19 @@
+﻿@inherits LayoutComponentBase
+
+<MudThemeProvider Theme="DefaultTheme"/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>
+
+<MudLayout>
+    <MudAppBar>
+        <MudText Typo="Typo.h5">gRPC DevTools Sample</MudText>
+        <MudSpacer />
+        <MudText Typo="Typo.body1">@_time</MudText>
+    </MudAppBar>
+    <MudMainContent>
+        <MudContainer Class="py-4" MaxWidth="MaxWidth.ExtraLarge">
+            @Body
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+

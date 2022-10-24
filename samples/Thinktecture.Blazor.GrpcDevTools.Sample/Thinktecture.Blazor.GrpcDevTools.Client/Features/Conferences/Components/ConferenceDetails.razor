@@ -1,0 +1,20 @@
+﻿@page "/conferences/{mode}"
+@page "/conferences/{mode}/{Id:guid}"
+
+<PageTitle>@(_isNew ? "Add new Conference" : _conference?.Title)</PageTitle>
+
+@if (_conference != null)
+{
+    <EditForm Model="_conference" OnValidSubmit="SaveConference">
+        <div class="d-flex flex-column full-width" style="gap: 1.5rem;">
+            <MudTextField Label="Title" @bind-Value="_conference.Title"></MudTextField>
+            <MudDateRangePicker Label="From ... To ..." @bind-DateRange="_dateRange"></MudDateRangePicker>
+            <MudTextField Label="City" @bind-Value="_conference.City"></MudTextField>
+            <MudTextField Label="Country" @bind-Value="_conference.Country"></MudTextField>
+            <div class="align-self-end">
+                <MudButton OnClick="Cancel">Cancel</MudButton>
+                <MudButton Color="Color.Primary" Variant="Variant.Filled" ButtonType="ButtonType.Submit">Save</MudButton>
+            </div>
+        </div>
+    </EditForm>
+}

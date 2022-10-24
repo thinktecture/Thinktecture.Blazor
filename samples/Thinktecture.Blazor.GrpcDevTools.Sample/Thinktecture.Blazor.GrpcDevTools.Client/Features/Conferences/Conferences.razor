@@ -1,0 +1,35 @@
+﻿@page "/"
+@using Blazor.GrpcDevTools.Shared.DTO
+
+<PageTitle>Conferences</PageTitle>
+
+@if (_conferences != null)
+{
+    <MudTable T="ConferenceOverview"
+              Items="@_conferences" 
+              Virtualize="true" 
+              Hover="true" 
+              FixedHeader="true"
+              Height="calc(100vh - 96px)"
+              Breakpoint="Breakpoint.Sm">
+        <HeaderContent>
+            <MudTh>Title</MudTh>
+            <MudTh>From</MudTh>
+            <MudTh>To</MudTh>
+            <MudTh>City</MudTh>
+            <MudTh>
+                <MudIconButton Icon="@Icons.Material.Filled.Add" OnClick="AddConference"></MudIconButton>
+            </MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd DataLabel="Title">@context.Title</MudTd>
+            <MudTd DataLabel="From">@context.DateFrom.ToShortDateString()</MudTd>
+            <MudTd DataLabel="To">@context.DateTo.ToShortDateString()</MudTd>
+            <MudTd DataLabel="City">@context.City</MudTd>
+            <MudTd>
+                <MudIconButton Icon="@Icons.Material.Filled.Edit" OnClick="() => EditConference(context.ID)"></MudIconButton>
+                <MudIconButton Icon="@Icons.Material.Filled.Delete" OnClick="() => DeleteConference(context.ID, context.Title)"></MudIconButton>
+            </MudTd>
+        </RowTemplate>
+    </MudTable>
+}

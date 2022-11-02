@@ -1,0 +1,9 @@
+@page "/badging"
+
+<h3>Badging API</h3>
+
+<p>Badging API is supported? @(_isBadgingSupported ? "yes" : "no")</p>
+
+<button @onclick="() => SetAppBadge()">Set app badge</button>
+<button @onclick="() => SetAppBadge(3)">Set app badge to 3</button>
+<button @onclick="ClearAppBadge">Clear app badge</button>

@@ -1,6 +1,11 @@
 ## Introduction
 
+gRPC-Web is becoming increasingly popular in the .NET world and, of course, in Blazor.
 
+But not only the technology, also the tooling for gRPC-Web has an important role.
+For some time now, there has been a Chrome browser extension for the gRPC-Web Developer Tools.
+
+I have made it my task to make this incredibly useful tool also usable for Blazor :-)
 
 ## Getting started
 
@@ -11,7 +16,13 @@ You need .NET 6.0 or newer to use this library.
 [Download .NET 6](https://dotnet.microsoft.com/download/dotnet/6.0)
 
 You also need the gRPC-Web Developer Tools Chrome Extsion
+
 [Install gRPC-Web Developer Tools](https://chrome.google.com/webstore/detail/grpc-web-developer-tools/kanmilmfkjnoladbbamlclhccicldjaj)
+
+
+### Platform support
+
+The gRPC-Web Developer Tools only available for Google Chrome and Microsoft Edge browser.
 
 ### Installation
 

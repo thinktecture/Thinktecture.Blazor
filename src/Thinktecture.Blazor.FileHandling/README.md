@@ -92,9 +92,10 @@ During installation, the application is registered at the target platform as a h
 
 To access the launch parameters during runtime, call the `SetConsumerAsync()` method.
 This method takes an action that is immediately called with the `LaunchParams`.
-This object has a `Files` property that currently directly contains a list of `FileSystemFileHandle`s for the files.
-To get the binary contents of the files, call the `GetFileAsync()` method on the `FileSystemFileHandle`.
-This returns a `File` object that offers methods like `TextAsync()` and `ArrayBufferAsync()` to retrieve the file's contents in different formats.
+This object has a `Files` property that currently directly contains a list of `FileSystemHandle`s for the files.
+The handles are either an instance of `FileSystemFileHandle` or `FileSystemDirectoryHandle`, so make sure to check for the correct type.
+To get the binary contents of files, call the `GetFileAsync()` method on a `FileSystemFileHandle`.
+This method returns a `File` object that offers methods like `TextAsync()` and `ArrayBufferAsync()` to retrieve the file's contents in different formats.
 
 ```csharp
 var isSupported = await fileHandlingService.IsSupportedAsync();
@@ -102,16 +103,19 @@ if (isSupported)
 {
     await _fileHandlingService.SetConsumerAsync(async (launchParams) =>
     {
-        foreach (var fileSystemFileHandle in launchParams.Files)
+        foreach (var fileSystemHandle in launchParams.Files)
         {
-            var file = await fileSystemFileHandle.GetFileAsync();
-
-            var text1 = await file.TextAsync();
-            Console.WriteLine(text1);
-
-            var bytes = await file.ArrayBufferAsync();
-            var text2 = System.Text.Encoding.UTF8.GetString(bytes);
-            Console.WriteLine(text2);
+            if (fileSystemHandle is FileSystemFileHandle fileSystemFileHandle)
+            {
+                var file = await fileSystemFileHandle.GetFileAsync();
+    
+                var text1 = await file.TextAsync();
+                Console.WriteLine(text1);
+    
+                var bytes = await file.ArrayBufferAsync();
+                var text2 = System.Text.Encoding.UTF8.GetString(bytes);
+                Console.WriteLine(text2);
+            }
         }
     });
 }

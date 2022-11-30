@@ -92,10 +92,9 @@ During installation, the application is registered at the target platform as a h
 
 To access the launch parameters during runtime, call the `SetConsumerAsync()` method.
 This method takes an action that is immediately called with the `LaunchParams`.
-This object has a `Files` property that currently directly contains a list of `IJSObjectReference`s for the files.
-These object references point to `FileSystemFileHandle` objects in JavaScript.
-To get the binary contents of the files, call the `getFile()` method on the `FileSystemFileHandle`.
-This returns the JavaScript `File` object that offers methods like `text()` and `arrayBuffer()` to retrieve the file's contents ([File API](https://developer.mozilla.org/en-US/docs/Web/API/File)).
+This object has a `Files` property that currently directly contains a list of `FileSystemFileHandle`s for the files.
+To get the binary contents of the files, call the `GetFileAsync()` method on the `FileSystemFileHandle`.
+This returns a `File` object that offers methods like `TextAsync()` and `ArrayBufferAsync()` to retrieve the file's contents in different formats.
 
 ```csharp
 var isSupported = await fileHandlingService.IsSupportedAsync();
@@ -105,15 +104,13 @@ if (isSupported)
     {
         foreach (var fileSystemFileHandle in launchParams.Files)
         {
-            var file = await fileSystemFileHandle.InvokeAsync<IJSObjectReference>("getFile", null);
-            
-            var text = await file.InvokeAsync<string>("text", null);
-            Console.WriteLine(text);
-            
-            var jsStream = await file.InvokeAsync<IJSStreamReference>("arrayBuffer", null);
-            var stream = await jsStream.OpenReadStreamAsync();
-            var streamReader = new StreamReader(stream);
-            var text2 = await streamReader.ReadToEndAsync();
+            var file = await fileSystemFileHandle.GetFileAsync();
+
+            var text1 = await file.TextAsync();
+            Console.WriteLine(text1);
+
+            var bytes = await file.ArrayBufferAsync();
+            var text2 = System.Text.Encoding.UTF8.GetString(bytes);
             Console.WriteLine(text2);
         }
     });
@@ -130,4 +127,4 @@ if (isSupported)
 ## Acknowledgements
 
 Thanks to [Kristoffer Strube](https://twitter.com/kstrubeg) who provides [a Blazor wrapper for the File System Access API](https://github.com/KristofferStrube/Blazor.FileSystemAccess).
-This library is inspired by Kristoffer's implementation and project setup.
+This library is inspired by Kristoffer's implementation and project setup, and uses the same classes to access file contents.

@@ -12,7 +12,7 @@ namespace Thinktecture.Blazor.FileHandling
         {
             _moduleTask = new(() => jsRuntime.InvokeAsync<IJSInProcessObjectReference>(
                 "import", "./_content/Thinktecture.Blazor.FileHandling/Thinktecture.Blazor.FileHandling.js"));
-            _relayReference = DotNetObjectReference.Create(new FileHandlingRelay(_moduleTask));
+            _relayReference = DotNetObjectReference.Create(new FileHandlingRelay(jsRuntime, _moduleTask));
         }
 
         /// <summary>

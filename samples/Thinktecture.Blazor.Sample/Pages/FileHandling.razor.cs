@@ -1,3 +1,4 @@
+using KristofferStrube.Blazor.FileSystemAccess;
 using Microsoft.AspNetCore.Components;
 using Thinktecture.Blazor.FileHandling;
 
@@ -17,12 +18,15 @@ namespace Thinktecture.Blazor.Sample.Pages
             {
                 await _fileHandlingService.SetConsumerAsync(async (p) =>
                 {
-                    foreach (var fileSystemFileHandle in p.Files)
+                    foreach (var fileSystemHandle in p.Files)
                     {
-                        var file = await fileSystemFileHandle.GetFileAsync();
-                        var text = await file.TextAsync();
-                        _text = text;
-                        StateHasChanged();
+                        if (fileSystemHandle is FileSystemFileHandle fileSystemFileHandle)
+                        {
+                            var file = await fileSystemFileHandle.GetFileAsync();
+                            var text = await file.TextAsync();
+                            _text = text;
+                            StateHasChanged();
+                        }
                     }
                 });
             }

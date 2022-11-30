@@ -24,15 +24,35 @@ public class FileHandlingRelay
         var targetUrl = await module.InvokeAsync<string?>("getTargetUrl");
         var files = await module.InvokeAsync<IJSObjectReference>("getFiles");
         var filesLength = await module.InvokeAsync<int>("getArrayLength", files);
-        var filesList = new List<FileSystemFileHandle>();
+        var filesList = new List<FileSystemHandle>();
 
         for (var i = 0; i < filesLength; i++)
         {
             var fileRef = await files.InvokeAsync<IJSObjectReference>("at", i);
-            filesList.Add(FileSystemFileHandle.Create(_jsRuntime, fileRef));
+            var fileSystemHandle = await GetFileSystemHandleAsync(fileRef);
+            filesList.Add(fileSystemHandle);
         }
 
         consumerRef.Value.Invoke(new LaunchParams(filesList, targetUrl));
         consumerRef.Dispose();
+    }
+
+    private async Task<FileSystemHandle> GetFileSystemHandleAsync(IJSObjectReference fileRef)
+    {
+        var fileHandle = FileSystemHandle.Create(_jsRuntime, fileRef);
+        var fileHandleKind = await fileHandle.GetKindAsync();
+        await fileHandle.DisposeAsync();
+        
+        if (fileHandleKind == FileSystemHandleKind.Directory)
+        {
+            return FileSystemDirectoryHandle.Create(_jsRuntime, fileRef);
+        }
+        
+        if (fileHandleKind == FileSystemHandleKind.File)
+        {
+            return FileSystemFileHandle.Create(_jsRuntime, fileRef);
+        }
+
+        throw new InvalidOperationException("Unsupported file system handle kind.");
     }
 }

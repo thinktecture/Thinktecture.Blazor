@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Components;
-using Microsoft.JSInterop;
 using Thinktecture.Blazor.FileHandling;
 
 namespace Thinktecture.Blazor.Sample.Pages
@@ -20,8 +19,8 @@ namespace Thinktecture.Blazor.Sample.Pages
                 {
                     foreach (var fileSystemFileHandle in p.Files)
                     {
-                        var file = await fileSystemFileHandle.InvokeAsync<IJSObjectReference>("getFile", null);
-                        var text = await file.InvokeAsync<string>("text", null);
+                        var file = await fileSystemFileHandle.GetFileAsync();
+                        var text = await file.TextAsync();
                         _text = text;
                         StateHasChanged();
                     }

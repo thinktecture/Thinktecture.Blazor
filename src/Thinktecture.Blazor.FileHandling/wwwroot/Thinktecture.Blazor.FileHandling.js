@@ -11,8 +11,12 @@ export function setConsumer(component, consumerRef) {
     });
 }
 
-// The following two methods are used by the FileHandlingRelay.
+// The following three methods are used by the FileHandlingRelay.
 // Workaround for https://github.com/dotnet/aspnetcore/issues/26049
+export function getTargetUrl() {
+    return launchParams.targetUrl ?? null;
+}
+
 export function getFiles() {
     const files = launchParams.files;
     launchParams = null;

@@ -43,7 +43,7 @@ You need to import the package to use it on your pages. This can be achieved by 
 
 ### Add to service collection
 
-To make the WebShareService available on all pages, register it at the IServiceCollection in `Program.cs` before the host is built:
+To make the AsyncClipboardService available on all pages, register it at the IServiceCollection in `Program.cs` before the host is built:
 
 ```csharp
 builder.Services.AddAsyncClipboardService();

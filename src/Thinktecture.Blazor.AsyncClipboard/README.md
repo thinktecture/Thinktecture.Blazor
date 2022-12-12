@@ -33,14 +33,6 @@ dotnet add package Thinktecture.Blazor.AsyncClipboard
 
 The package can be used in Blazor WebAssembly projects.
 
-### Imports
-
-You need to import the package to use it on your pages. This can be achieved by adding the following using statement to `_Imports.razor`:
-
-```
-@using Thinktecture.Blazor.AsyncClipboard
-```
-
 ### Add to service collection
 
 To make the WebShareService available on all pages, register it at the IServiceCollection in `Program.cs` before the host is built:
@@ -169,3 +161,9 @@ Please note that the user may need to confirm a permission request first, and re
 
 Thanks to [Kristoffer Strube](https://twitter.com/kstrubeg) who provides [a Blazor wrapper for the File System Access API](https://github.com/KristofferStrube/Blazor.FileSystemAccess).
 This library is inspired by Kristoffer's implementation and project setup.
+
+## License and Note
+
+BSD-3-Clause.
+
+This is a technical showcase, not an official Thinktecture product.

@@ -169,3 +169,9 @@ Please note that the user may need to confirm a permission request first, and re
 
 Thanks to [Kristoffer Strube](https://twitter.com/kstrubeg) who provides [a Blazor wrapper for the File System Access API](https://github.com/KristofferStrube/Blazor.FileSystemAccess).
 This library is inspired by Kristoffer's implementation and project setup.
+
+## License and Note
+
+BSD-3-Clause.
+
+This is a technical showcase, not an official Thinktecture product.

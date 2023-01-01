@@ -32,14 +32,6 @@ dotnet add package Thinktecture.Blazor.Badging
 
 The package can be used in Blazor WebAssembly projects.
 
-### Imports
-
-You need to import the package to use it on your pages. This can be achieved by adding the following using statement to `_Imports.razor`:
-
-```
-@using Thinktecture.Blazor.Badging
-```
-
 ### Add to service collection
 
 To make the BadgingService available on all pages, register it at the IServiceCollection in `Program.cs` before the host is built:

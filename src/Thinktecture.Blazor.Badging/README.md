@@ -6,7 +6,7 @@
 
 A Blazor wrapper for the [Badging API](https://w3c.github.io/badging/).
 
-The Badging API allows you to share a text, title, URL, or files with another application installed on the user's system via the share functionality provided by the operating system.
+The Badging API allows you to display a badge on the installed application’s icon.
 
 ## Getting started
 

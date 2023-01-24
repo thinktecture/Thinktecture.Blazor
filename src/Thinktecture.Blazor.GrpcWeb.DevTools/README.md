@@ -77,4 +77,8 @@ To enable the gRPC-Web Developer Tools on your project you have two opportunitie
 builder.Services.EnableGrpcWebDevTools();
 ```
 
+## License and Note
 
+BSD-3-Clause.
+
+This is a technical showcase, not an official Thinktecture product.

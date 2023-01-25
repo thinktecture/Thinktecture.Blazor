@@ -1,4 +1,4 @@
-using KristofferStrube.Blazor.FileSystemAccess;
+using KristofferStrube.Blazor.FileSystem;
 
 namespace Thinktecture.Blazor.FileHandling.Models;
 

@@ -12,9 +12,9 @@ The File Handling API allows you to register your Progressive Web App as a file 
 
 ### Prerequisites
 
-You need .NET 6.0 or newer to use this library.
+You need .NET 7.0 or newer to use this library.
 
-[Download .NET 6](https://dotnet.microsoft.com/download/dotnet/6.0)
+[Download .NET 7](https://dotnet.microsoft.com/download/dotnet/7.0)
 
 ### Platform support
 

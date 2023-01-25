@@ -6,5 +6,5 @@ namespace Thinktecture.Blazor.GrpcDevTools.Shared.DTO;
 public class TimeResult
 {
     [DataMember(Order = 1)]
-    public string Time { get; set; }
+    public string Time { get; set; } = string.Empty;
 }

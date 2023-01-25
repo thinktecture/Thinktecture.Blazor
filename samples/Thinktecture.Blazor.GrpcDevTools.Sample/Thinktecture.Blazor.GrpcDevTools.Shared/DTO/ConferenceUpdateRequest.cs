@@ -9,6 +9,6 @@ namespace Thinktecture.Blazor.GrpcDevTools.Shared.DTO
         public Guid ID { get; set; }
 
         [DataMember(Order = 2)]
-        public ConferenceDetailModel Conference { get; set; }
+        public ConferenceDetailModel? Conference { get; set; }
     }
 }

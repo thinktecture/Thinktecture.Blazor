@@ -25,7 +25,10 @@ namespace Thinktecture.Blazor.GrpcDevTools.Client.Features.Conferences.Component
             else if (Id.HasValue && Id.Value != Guid.Empty)
             {
                 _conference = await _conferencesService.GetConferenceDetailsAsync(new ConferenceDetailsRequest { ID = Id.Value });
-                _dateRange = new DateRange(_conference.DateFrom, _conference.DateTo);
+                if (_conference is not null)
+                {
+                    _dateRange = new DateRange(_conference.DateFrom, _conference.DateTo);
+                }
             }            
             await base.OnInitializedAsync();
         }

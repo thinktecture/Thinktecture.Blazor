@@ -43,7 +43,7 @@ namespace Thinktecture.Blazor.GrpcWeb.DevTools
                         return invoker.CreateGrpcService<TService>();
                     }
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     return GenerateService<TService>(serviceProvider);
                 }

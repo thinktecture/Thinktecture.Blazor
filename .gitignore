@@ -347,9 +347,5 @@ healthchecksdb
 MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
-.ionide/
-/src/Thinktecture.Blazor.WebShare/Thinktecture.Blazor.WebShare.sln
-/src/Thinktecture.Blazor.AsyncClipboard/Thinktecture.Blazor.AsyncClipboard.sln
-/src/Thinktecture.Blazor.Badging/Thinktecture.Blazor.Badging.sln
-/src/Thinktecture.Blazor.FileHandling/Thinktecture.Blazor.FileHandling.sln
-/src/Thinktecture.Blazor.GrpcWeb.DevTools/Thinktecture.Blazor.GrpcWeb.DevTools.sln
+.ionide/**/*.sln
+/src/**/*.sln

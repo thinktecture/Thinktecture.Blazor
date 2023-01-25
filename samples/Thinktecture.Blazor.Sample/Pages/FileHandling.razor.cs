@@ -1,4 +1,4 @@
-using KristofferStrube.Blazor.FileSystemAccess;
+using KristofferStrube.Blazor.FileSystem;
 using Microsoft.AspNetCore.Components;
 using Thinktecture.Blazor.FileHandling;
 

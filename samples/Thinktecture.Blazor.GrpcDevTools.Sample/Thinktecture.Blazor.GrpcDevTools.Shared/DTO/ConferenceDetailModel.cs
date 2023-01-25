@@ -11,7 +11,7 @@ public class ConferenceDetailModel
 
     [DataMember(Order = 2)]
     [Required]
-    public string Title { get; set; }
+    public string Title { get; set; } = string.Empty;
 
     [DataMember(Order = 3)]
     [Required]
@@ -23,9 +23,9 @@ public class ConferenceDetailModel
 
     [DataMember(Order = 5)]
     [Required]
-    public string Country { get; set; }
+    public string Country { get; set; } = string.Empty;
 
     [DataMember(Order = 6)]
     [Required]
-    public string City { get; set; }
+    public string City { get; set; } = string.Empty;
 }

@@ -7,7 +7,7 @@ namespace Thinktecture.Blazor.GrpcDevTools.Shared.Services;
 public interface IConferencesService
 {
     Task<IEnumerable<ConferenceOverview>> ListConferencesAsync();
-    Task<ConferenceDetailModel> GetConferenceDetailsAsync(ConferenceDetailsRequest request);
+    Task<ConferenceDetailModel?> GetConferenceDetailsAsync(ConferenceDetailsRequest request);
     Task<ConferenceDetailModel> AddNewConferenceAsync(ConferenceDetailModel conference);
     Task UpdateConferenceAsync(ConferenceUpdateRequest request);
     Task DeleteConferenceAsync(ConferenceDetailsRequest request);

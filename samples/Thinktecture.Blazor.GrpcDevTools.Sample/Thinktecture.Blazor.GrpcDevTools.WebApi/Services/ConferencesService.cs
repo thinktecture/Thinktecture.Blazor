@@ -36,7 +36,7 @@ public class ConferencesService : IConferencesService
 
     }
 
-    public async Task<ConferenceDetailModel> GetConferenceDetailsAsync(ConferenceDetailsRequest request)
+    public async Task<ConferenceDetailModel?> GetConferenceDetailsAsync(ConferenceDetailsRequest request)
     {
         var conferenceDetails = await _conferencesDbContext.Conferences.FindAsync(request.ID);
 
@@ -54,11 +54,11 @@ public class ConferencesService : IConferencesService
 
         if (conferenceDetails != null)
         {
-            conferenceDetails.Title = request.Conference.Title;
-            conferenceDetails.DateFrom = request.Conference.DateFrom ?? DateTime.Now;
-            conferenceDetails.DateTo = request.Conference.DateTo ?? DateTime.Now;
-            conferenceDetails.City = request.Conference.City;
-            conferenceDetails.Country = request.Conference.Country;
+            conferenceDetails.Title = request.Conference?.Title ?? string.Empty;
+            conferenceDetails.DateFrom = request.Conference?.DateFrom ?? DateTime.Now;
+            conferenceDetails.DateTo = request.Conference?.DateTo ?? DateTime.Now;
+            conferenceDetails.City = request.Conference?.City ?? string.Empty;
+            conferenceDetails.Country = request.Conference?.Country ?? string.Empty;
             await _conferencesDbContext.SaveChangesAsync();
         }
     }

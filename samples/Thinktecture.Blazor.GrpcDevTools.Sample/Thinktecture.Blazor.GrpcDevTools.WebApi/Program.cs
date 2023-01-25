@@ -61,11 +61,8 @@ app.UseGrpcWeb();
 
 app.UseAuthorization();
 
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapGrpcService<ConferencesService>().EnableGrpcWeb();
-    endpoints.MapGrpcService<TimeService>().EnableGrpcWeb();
-    endpoints.MapControllers();
-});
+app.MapGrpcService<ConferencesService>().EnableGrpcWeb();
+app.MapGrpcService<TimeService>().EnableGrpcWeb();
+app.MapControllers();
 
 app.Run();

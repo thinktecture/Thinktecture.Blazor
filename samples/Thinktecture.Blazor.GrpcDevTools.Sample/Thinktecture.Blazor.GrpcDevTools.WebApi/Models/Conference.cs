@@ -8,10 +8,10 @@ public class Conference
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     [Key]
     public Guid ID { get; set; }
-    public string Title { get; set; }
+    public string Title { get; set; } = string.Empty;
     public DateTime DateFrom { get; set; }
     public DateTime DateTo { get; set; }
-    public string Country { get; set; }
-    public string City { get; set; }
+    public string Country { get; set; } = string.Empty;
+    public string City { get; set; } = string.Empty;
     public DateTime DateCreated { get; set; }
 }

@@ -349,3 +349,4 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 /src/Thinktecture.Blazor.WebShare/Thinktecture.Blazor.WebShare.sln
+/src/Thinktecture.Blazor.AsyncClipboard/Thinktecture.Blazor.AsyncClipboard.sln

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
 
@@ -36,7 +36,7 @@
 
   <ItemGroup>
     <PackageReference Include="EnumExtensions.System.Text.Json" Version="1.1.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.2" />
   </ItemGroup>
 
 </Project>

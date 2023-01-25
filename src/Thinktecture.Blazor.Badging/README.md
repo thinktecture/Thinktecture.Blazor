@@ -12,9 +12,9 @@ The Badging API allows you to display a badge on the installed application’s i
 
 ### Prerequisites
 
-You need .NET 6.0 or newer to use this library.
+You need .NET 7.0 or newer to use this library.
 
-[Download .NET 6](https://dotnet.microsoft.com/download/dotnet/6.0)
+[Download .NET 7](https://dotnet.microsoft.com/download/dotnet/7.0)
 
 ### Platform support
 

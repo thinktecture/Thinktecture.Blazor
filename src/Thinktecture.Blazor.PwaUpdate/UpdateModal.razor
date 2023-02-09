@@ -1,8 +1,21 @@
 ﻿@if (_newVersionAvailable)
 {
-    <button type="button" 
-        class="@(_close ? "btn btn-warning shadow floating-update-button close" : "btn btn-warning shadow floating-update-button")" 
-            onclick="@(() => CloseModal())">
-        A new version of the application is available. Click here to reload.
-    </button>
+    @if (ChildContent is not null)
+    {
+        @ChildContent
+    }
+    else
+    {
+        <div class="@(_collapse ? "information collapse" : "information")">
+            <div class="text">
+                @InformationMessage
+            </div>
+            <div class="action" onclick="window.location.reload()">
+                Update
+            </div>
+            <div class="close" onclick="@(() => CollapseModal())">
+                <div class="close-icon"></div>
+            </div>
+        </div>
+    }
 }

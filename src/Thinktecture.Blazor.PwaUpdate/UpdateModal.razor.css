@@ -1,0 +1,40 @@
+﻿.floating-update-button {
+    position: fixed;
+    top: 2rem;
+    left: 0;
+    right: 0;
+    width: 60vw;
+    min-width: 10rem;
+    z-index: 1000;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    animation: fadein 2s ease-out;
+}
+
+    .floating-update-button.close {
+        top: -100%;
+        opacity: 0;
+        animation: fadeout 2s ease-out;
+    }
+
+@keyframes fadein {
+    from {
+        top: -100%;
+    }
+
+    to {
+        top: 2rem;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+        top: 2rem;
+    }
+
+    to {
+        opacity: 0;
+        top: -100%;
+    }
+}

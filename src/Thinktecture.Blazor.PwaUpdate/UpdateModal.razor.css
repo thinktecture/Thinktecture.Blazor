@@ -1,17 +1,78 @@
-﻿.floating-update-button {
+﻿.information {
+    --close-color: 255, 255, 255;
+    --action-color: 208, 188, 255;
+    --on-container-background: #F4EFF4;
+    --container-background: #313033;
     position: fixed;
     top: 2rem;
     left: 0;
     right: 0;
+    z-index: 1000;
+    height: 3rem;
     width: 60vw;
     min-width: 10rem;
-    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     margin: 0 auto;
-    padding: 1rem 1.5rem;
+    padding-left: 1rem;
+    padding-right: 0.5rem;
+    background-color: var(--container-background);
+    color: var(--on-container-background);
+    border-radius: 0.25rem;
     animation: fadein 2s ease-out;
 }
 
-    .floating-update-button.close {
+    .information .text {
+        flex: 1;
+    }
+
+    .information .action {
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        padding: 0 1.5rem;
+        color: rgb(var(--action-color));
+        border-radius: 1.875rem;
+        cursor: pointer;
+    }
+
+        .information .action:hover {
+            background-color: rgba(var(--action-color), 0.08);
+        }
+
+        .information .action:active {
+            background-color: rgba(var(--action-color), 0.12);
+        }
+
+    .information .close {
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(var(--close-color));
+        margin-right: 0.25rem;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+        .information .close:hover {
+            background-color: rgba(var(--close-color), 0.08);
+        }
+
+        .information .close:active {
+            background-color: rgba(var(--close-color), 0.12);
+        }
+        /*<!-- ! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->*/
+        .information .close .close-icon {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="24" height="24" fill="white"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>');
+            background-size: cover;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+    .information.collapse {
         top: -100%;
         opacity: 0;
         animation: fadeout 2s ease-out;

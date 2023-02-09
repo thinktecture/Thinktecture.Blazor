@@ -7,25 +7,30 @@ namespace Thinktecture.Blazor.PwaUpdate
     {
         [Inject] private IJSRuntime _jsRuntime { get; set; } = default!;
 
-        private bool _newVersionAvailable = true;
-        private bool _close = false;
+        [Parameter] public string InformationMessage { get; set; } = string.Empty;
+        [Parameter] public RenderFragment? ChildContent { get; set; }
+
+        private bool _newVersionAvailable = false;
+        private bool _collapse = false;
 
         protected override async Task OnInitializedAsync()
         {
-            await RegisterForUpdateAvailableNotification();
+            var module = await _jsRuntime.InvokeAsync<IJSObjectReference>("import", "./_content/Thinktecture.Blazor.PwaUpdate/UpdateModal.razor.js");
+            if (module is not null)
+            {
+                await RegisterForUpdateAvailableNotification(module);
+            }
+            await base.OnInitializedAsync();
         }
 
-        private async Task RegisterForUpdateAvailableNotification()
+        private async Task RegisterForUpdateAvailableNotification(IJSObjectReference jSObject)
         {
-            await _jsRuntime.InvokeVoidAsync(
-                "registerForUpdateAvailableNotification",
-                DotNetObjectReference.Create(this),
-                nameof(OnUpdateAvailable));
+            await jSObject.InvokeVoidAsync("registerUpdateEvent", DotNetObjectReference.Create(this), nameof(OnUpdateAvailable));
         }
 
-        private void CloseModal()
+        private void CollapseModal()
         {
-            _close = true;
+            _collapse = true;
         }
 
         [JSInvokable(nameof(OnUpdateAvailable))]

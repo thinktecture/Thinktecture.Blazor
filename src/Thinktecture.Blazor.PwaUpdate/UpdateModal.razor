@@ -1,0 +1,8 @@
+﻿@if (_newVersionAvailable)
+{
+    <button type="button" 
+        class="@(_close ? "btn btn-warning shadow floating-update-button close" : "btn btn-warning shadow floating-update-button")" 
+            onclick="@(() => CloseModal())">
+        A new version of the application is available. Click here to reload.
+    </button>
+}

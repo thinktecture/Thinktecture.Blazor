@@ -38,4 +38,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Thinktecture.Blazor.FileHandling\Thinktecture.Blazor.FileHandling.csproj" />
+  </ItemGroup>
+
 </Project>

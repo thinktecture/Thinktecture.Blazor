@@ -1,12 +1,12 @@
 ﻿.information {
-    --close-color: 255, 255, 255;
-    --action-color: 208, 188, 255;
-    --on-container-background: #F4EFF4;
-    --container-background: #313033;
+    --close-icon-color: 255, 255, 255;
+    --action-button-color: 208, 188, 255;
+    --modal-background: #313033;
+    --on-modal-background: #F4EFF4;
+
     position: fixed;
     top: 2rem;
-    left: 0;
-    right: 0;
+    right: 2rem;
     z-index: 1000;
     height: 3rem;
     width: 60vw;
@@ -14,11 +14,10 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    margin: 0 auto;
     padding-left: 1rem;
     padding-right: 0.5rem;
-    background-color: var(--container-background);
-    color: var(--on-container-background);
+    background-color: var(--modal-background);
+    color: var(--on-modal-background);
     border-radius: 0.25rem;
     animation: fadein 2s ease-out;
 }
@@ -32,17 +31,17 @@
         display: flex;
         align-items: center;
         padding: 0 1.5rem;
-        color: rgb(var(--action-color));
+        color: rgb(var(--action-button-color));
         border-radius: 1.875rem;
         cursor: pointer;
     }
 
         .information .action:hover {
-            background-color: rgba(var(--action-color), 0.08);
+            background-color: rgba(var(--action-button-color), 0.08);
         }
 
         .information .action:active {
-            background-color: rgba(var(--action-color), 0.12);
+            background-color: rgba(var(--action-button-color), 0.12);
         }
 
     .information .close {
@@ -51,18 +50,18 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: rgb(var(--close-color));
+        color: rgb(var(--close-icon-color));
         margin-right: 0.25rem;
         border-radius: 50%;
         cursor: pointer;
     }
 
         .information .close:hover {
-            background-color: rgba(var(--close-color), 0.08);
+            background-color: rgba(var(--close-icon-color), 0.08);
         }
 
         .information .close:active {
-            background-color: rgba(var(--close-color), 0.12);
+            background-color: rgba(var(--close-icon-color), 0.12);
         }
         /*<!-- ! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->*/
         .information .close .close-icon {
@@ -97,5 +96,35 @@
     to {
         opacity: 0;
         top: -100%;
+    }
+}
+
+@media (max-width: 1023px) {
+    .information {
+        right: 1rem;
+        min-width: 20rem;
+    }
+
+    .information .action {
+        height: 2.25rem;
+        font-size: 0.75rem;
+    }
+
+    information .close {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .information .action {
+        height: 2rem;
+        font-size: 0.7rem;
+    }
+
+    information .close {
+        width: 2rem;
+        height: 2rem;
     }
 }

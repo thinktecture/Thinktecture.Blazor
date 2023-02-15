@@ -10,11 +10,13 @@
             <div class="text">
                 @InformationMessage
             </div>
-            <div class="action" onclick="window.location.reload()">
-                Update
-            </div>
-            <div class="close" onclick="@(() => CollapseModal())">
-                <div class="close-icon"></div>
+            <div class="actions">
+                <div class="update" onclick="window.location.reload()">
+                    Update
+                </div>
+                <div class="close" onclick="@(() => CollapseModal())">
+                    <div class="close-icon"></div>
+                </div>
             </div>
         </div>
     }

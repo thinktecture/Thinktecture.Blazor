@@ -3,7 +3,6 @@
     --action-button-color: 208, 188, 255;
     --modal-background: #313033;
     --on-modal-background: #F4EFF4;
-
     position: fixed;
     top: 2rem;
     right: 2rem;
@@ -27,12 +26,13 @@
         padding: 0.5rem;
     }
 
-    .information .action, .information .close {
-        margin-bottom: 0.25rem;
+    .information .actions {
+        display: flex;
+        align-items: center;
     }
 
 
-    .information .action {
+    .information .actions .update {
         height: 2.5rem;
         display: flex;
         align-items: center;
@@ -40,19 +40,17 @@
         color: rgb(var(--action-button-color));
         border-radius: 1.875rem;
         cursor: pointer;
-
-        align-self: flex-end;
     }
 
-        .information .action:hover {
+        .information .actions .update:hover {
             background-color: rgba(var(--action-button-color), 0.08);
         }
 
-        .information .action:active {
+        .information .actions .update:active {
             background-color: rgba(var(--action-button-color), 0.12);
         }
 
-    .information .close {
+    .information .actions .close {
         width: 2.5rem;
         height: 2.5rem;
         display: flex;
@@ -62,19 +60,18 @@
         margin-right: 0.25rem;
         border-radius: 50%;
         cursor: pointer;
-
         align-self: flex-end;
     }
 
-        .information .close:hover {
+        .information .actions .close:hover {
             background-color: rgba(var(--close-icon-color), 0.08);
         }
 
-        .information .close:active {
+        .information .actions .close:active {
             background-color: rgba(var(--close-icon-color), 0.12);
         }
         /*<!-- ! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->*/
-        .information .close .close-icon {
+        .information .actions .close .close-icon {
             background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="24" height="24" fill="white"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>');
             background-size: cover;
             width: 1.5rem;
@@ -116,38 +113,37 @@
         font-size: 0.75rem;
     }
 
-        .information .action, .information .close {
-            margin-bottom: 0.35rem;
+        .information .action {
+            height: 2.25rem;
+            font-size: 0.75rem;
         }
 
-    .information .action {
-        height: 2.25rem;
-        font-size: 0.75rem;
-    }
-
-    .information .close {
-        width: 2.25rem;
-        height: 2.25rem;
-    }
+        .information .close {
+            width: 2.25rem;
+            height: 2.25rem;
+        }
 }
 
 @media (max-width: 767px) {
     .information {
+        flex-direction: column;
+        align-items: flex-start;
         font-size: 0.7rem;
+
+        padding: 0.5rem;
     }
 
-        .information .action, .information .close {
-            margin-bottom: 0.5rem;
+        .information .actions {
+            align-self: flex-end;
         }
 
+            .information .actions .update {
+                height: 2rem;
+                font-size: 0.7rem;
+            }
 
-    .information .action {
-        height: 2rem;
-        font-size: 0.7rem;
-    }
-
-    .information .close {
-        width: 2rem;
-        height: 2rem;
-    }
+            .information .actions .close {
+                width: 2rem;
+                height: 2rem;
+            }
 }

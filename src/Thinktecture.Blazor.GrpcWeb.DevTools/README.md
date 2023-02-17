@@ -1,5 +1,7 @@
 ## Introduction
 
+[![NuGet Downloads (official NuGet)](https://img.shields.io/nuget/dt/Thinktecture.Blazor.GrpcWeb.DevTools?label=NuGet%20Downloads)](https://www.nuget.org/packages/Thinktecture.Blazor.GrpcWeb.DevTools/)
+
 gRPC-Web is becoming increasingly popular in the .NET world and, of course, in Blazor.
 
 But not only the technology, also the tooling for gRPC-Web has an important role.

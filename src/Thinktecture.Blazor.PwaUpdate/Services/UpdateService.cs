@@ -2,7 +2,7 @@
 
 namespace Thinktecture.Blazor.PwaUpdate.Services
 {
-    public class UpdateService : JSModule
+    public class UpdateService : JSModule, IUpdateService
     {
         public Action UpdateAvailable { get; set; }
         public UpdateService(IJSRuntime js)
@@ -10,9 +10,14 @@ namespace Thinktecture.Blazor.PwaUpdate.Services
         {
         }
 
-        public async Task InitializeServiceWorkerUpdate()
+        public async Task InitializeServiceWorkerUpdateAsync()
         {
             await InvokeVoidAsync("registerUpdateEvent", DotNetObjectReference.Create(this), nameof(OnUpdateAvailable));
+        }
+
+        public async Task ReloadAsync()
+        {
+            await InvokeVoidAsync("reload");
         }
 
         [JSInvokable(nameof(OnUpdateAvailable))]

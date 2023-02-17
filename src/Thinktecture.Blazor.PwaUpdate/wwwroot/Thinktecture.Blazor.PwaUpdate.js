@@ -12,3 +12,7 @@ export async function registerUpdateEvent(caller, methodName) {
         }
     }
 }
+
+export function reload() {
+    window.location.reload();
+}

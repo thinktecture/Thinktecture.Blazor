@@ -17,6 +17,7 @@
     <ProjectReference Include="..\..\src\Thinktecture.Blazor.Badging\Thinktecture.Blazor.Badging.csproj" />
     <ProjectReference Include="..\..\src\Thinktecture.Blazor.FileHandling\Thinktecture.Blazor.FileHandling.csproj" />
     <ProjectReference Include="..\..\src\Thinktecture.Blazor.PwaUpdate\Thinktecture.Blazor.PwaUpdate.csproj" />
+    <ProjectReference Include="..\..\src\Thinktecture.Blazor.Notification\Thinktecture.Blazor.Notification.csproj" />
     <ProjectReference Include="..\..\src\Thinktecture.Blazor.WebShare\Thinktecture.Blazor.WebShare.csproj" />
   </ItemGroup>
 

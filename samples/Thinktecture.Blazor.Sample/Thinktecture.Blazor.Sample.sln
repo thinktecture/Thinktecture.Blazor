@@ -14,6 +14,7 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thinktecture.Blazor.FileHandling", "..\..\src\Thinktecture.Blazor.FileHandling\Thinktecture.Blazor.FileHandling.csproj", "{F087B354-1D64-4BE0-B216-C08D614D2763}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thinktecture.Blazor.PwaUpdate", "..\..\src\Thinktecture.Blazor.PwaUpdate\Thinktecture.Blazor.PwaUpdate.csproj", "{BB87DA7A-D3B1-4811-A1C2-5729385CA54E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thinktecture.Blazor.Notification", "..\..\src\Thinktecture.Blazor.Notification\Thinktecture.Blazor.Notification.csproj", "{EDB0AA0E-D94D-4F96-B673-C22169AD55B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +46,10 @@ Global
 		{BB87DA7A-D3B1-4811-A1C2-5729385CA54E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB87DA7A-D3B1-4811-A1C2-5729385CA54E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB87DA7A-D3B1-4811-A1C2-5729385CA54E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDB0AA0E-D94D-4F96-B673-C22169AD55B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDB0AA0E-D94D-4F96-B673-C22169AD55B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDB0AA0E-D94D-4F96-B673-C22169AD55B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDB0AA0E-D94D-4F96-B673-C22169AD55B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

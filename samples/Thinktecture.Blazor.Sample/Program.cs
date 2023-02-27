@@ -6,6 +6,7 @@ using Thinktecture.Blazor.FileHandling;
 using Thinktecture.Blazor.PwaUpdate;
 using Thinktecture.Blazor.Sample;
 using Thinktecture.Blazor.WebShare;
+using Thinktecture.Blazor.Notification;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -17,5 +18,6 @@ builder.Services.AddBadgingService();
 builder.Services.AddFileHandlingService();
 builder.Services.AddWebShareService();
 builder.Services.AddUpdateService();
+builder.Services.AddNotificationService();
 
 await builder.Build().RunAsync();

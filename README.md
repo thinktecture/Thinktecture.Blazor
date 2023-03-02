@@ -20,7 +20,7 @@ The Web Share API allows you to share a text, title, URL, or files with another 
 
 ## [Thinktecture.Blazor.PwaUpdate](src/Thinktecture.Blazor.PwaUpdate/README.md)
 
-This package allow you to receive a message as soon as a update of your application is ready for installation.
+This package allows you to display a notification as soon as an update of your application is ready for installation.
 
 ## [Thinktecture.Blazor.GrpcWeb.DevTools](src/Thinktecture.Blazor.GrpcWeb.DevTools/README.md)
 

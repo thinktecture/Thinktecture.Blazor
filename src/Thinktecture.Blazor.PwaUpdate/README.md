@@ -84,7 +84,8 @@ Another option is to override CSS variables:
 
 If you do not want to use the modal, you can also use only the update service. To do this, you can make the `IUpdateService` service available to the component, 
 page, or service via dependency injection. To receive the event for an update, simply register against the `UpdateAvailable` event. 
-Then call the initialization method `InitializeServiceWorkerUpdateAsync` to start the registration of the StateChanged event of the service worker.
+Then call the initialization method `InitializeServiceWorkerUpdateAsync` to start the registration of the `StateChanged` event of the service worker.
+
 
 ```csharp
 protected override async Task OnInitializedAsync()

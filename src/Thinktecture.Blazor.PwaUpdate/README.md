@@ -38,7 +38,8 @@ The package can be used in Blazor WebAssembly projects.
 To make the UpdateService available on all pages, register it at the IServiceCollection in `Program.cs` before the host is built:
 
 ```csharp
-builder.Services.AddPwaUpdateServices();
+builder.Services.AddUpdateService();
+
 ```
 ### Add to Imports
 

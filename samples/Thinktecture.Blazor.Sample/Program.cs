@@ -16,6 +16,6 @@ builder.Services.AddAsyncClipboardService();
 builder.Services.AddBadgingService();
 builder.Services.AddFileHandlingService();
 builder.Services.AddWebShareService();
-builder.Services.AddPwaUpdateServices();
+builder.Services.AddUpdateService();
 
 await builder.Build().RunAsync();

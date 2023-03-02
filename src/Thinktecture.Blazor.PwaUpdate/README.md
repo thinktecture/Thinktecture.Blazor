@@ -1,4 +1,5 @@
-# Thinktecture.Blazor.Badging
+# Thinktecture.Blazor.PwaUpdate
+
 
 [![NuGet Downloads (official NuGet)](https://img.shields.io/nuget/dt/Thinktecture.Blazor.PwaUpdate?label=NuGet%20Downloads)](https://www.nuget.org/packages/Thinktecture.Blazor.PwaUpdate/)
 

@@ -7,7 +7,8 @@ namespace Thinktecture.Blazor.PwaUpdate
     {
         [Inject] private IUpdateService _updateService { get; set; } = default!;
 
-        [Parameter] public string InformationMessage { get; set; } = string.Empty;
+        [Parameter] public string InformationMessage { get; set; } = "New update is available";
+        [Parameter] public string UpdateActionLabel { get; set; } = "Update";
         [Parameter] public RenderFragment? ChildContent { get; set; }
 
         private bool _newVersionAvailable = false;

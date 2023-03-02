@@ -10,7 +10,8 @@ namespace Thinktecture.Blazor.PwaUpdate
 {
     public static class PwaUpdateServiceCollectionExtensions
     {
-        public static IServiceCollection AddPwaUpdateServices(this IServiceCollection services)
+        public static IServiceCollection AddUpdateService(this IServiceCollection services)
+
         {
             return services.AddScoped<IUpdateService, UpdateService>();
         }

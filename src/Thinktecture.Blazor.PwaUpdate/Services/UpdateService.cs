@@ -9,7 +9,7 @@ namespace Thinktecture.Blazor.PwaUpdate.Services
         public Action UpdateAvailable { get; set; }
         public UpdateService(IJSRuntime js)
             => _moduleTask = new(() => js.InvokeAsync<IJSInProcessObjectReference>(
-                "import", "\"./_content/Thinktecture.Blazor.PwaUpdate/Thinktecture.Blazor.PwaUpdate.js\""));
+                "import", "./_content/Thinktecture.Blazor.PwaUpdate/Thinktecture.Blazor.PwaUpdate.js"));
 
         public async Task InitializeServiceWorkerUpdateAsync()
         {

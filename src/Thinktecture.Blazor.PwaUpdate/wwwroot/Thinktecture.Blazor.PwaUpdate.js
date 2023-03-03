@@ -1,10 +1,10 @@
 ﻿export async function registerUpdateEvent(caller, methodName) {
     const registration = await navigator.serviceWorker.ready;
-    registration.onupdatefound = async () => {
+    registration.onupdatefound = () => {
         const installingServiceWorker = registration.installing;
         installingServiceWorker.onstatechange = () => {
             if (installingServiceWorker.state === 'installed') {
-                await caller.invokeMethodAsync(methodName);
+                caller.invokeMethodAsync(methodName);
             }
         }
     }

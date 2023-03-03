@@ -49,6 +49,20 @@ To use the default UpdateModal component on the hole app razor files, register i
 @using Thinktecture.Blazor.PwaUpdate
 ```
 
+### Adapt Publish ServiceWorker
+
+To get to actual service worker use the `skipWaiting`-method in the service worker. This method forces the waiting service worker to become the active service worker.
+In Blazor project exists a service worker file `service-worker.published.js`, where a row needs to be added.
+
+```JavaScript
+async function onInstall(event) {
+    console.info('Service worker: Install');
+    self.skipWaiting(); // --> THIS CALL MUST BE ADDED
+
+   //...more code
+}
+```
+
 ### Update Modal
 
 To use the default update modal, add the component to the main layout. For example:

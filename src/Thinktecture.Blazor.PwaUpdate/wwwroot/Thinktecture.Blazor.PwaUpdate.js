@@ -3,7 +3,7 @@
     registration.onupdatefound = () => {
         const installingServiceWorker = registration.installing;
         installingServiceWorker.onstatechange = () => {
-            if (installingServiceWorker.state === 'installed') {
+            if (installingServiceWorker.state.startsWith('installed')) {
                 caller.invokeMethodAsync(methodName);
             }
         }

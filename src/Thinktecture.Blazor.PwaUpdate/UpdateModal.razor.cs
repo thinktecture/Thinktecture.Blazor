@@ -6,7 +6,6 @@ namespace Thinktecture.Blazor.PwaUpdate
     public partial class UpdateModal
     {
         [Inject] private IUpdateService _updateService { get; set; } = default!;
-
         [Parameter] public string InformationMessage { get; set; } = "New update is available";
         [Parameter] public string UpdateActionLabel { get; set; } = "Update";
         [Parameter] public RenderFragment? ChildContent { get; set; }
@@ -16,7 +15,11 @@ namespace Thinktecture.Blazor.PwaUpdate
 
         protected override async Task OnInitializedAsync()
         {
-            _updateService.UpdateAvailable = () => _newVersionAvailable = true;
+            _updateService.UpdateAvailable = () =>
+            {
+                _newVersionAvailable = true;
+                StateHasChanged();
+            };
             await _updateService.InitializeServiceWorkerUpdateAsync();
             await base.OnInitializedAsync();
         }

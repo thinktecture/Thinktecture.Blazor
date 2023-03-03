@@ -1,4 +1,6 @@
-﻿@if (_newVersionAvailable)
+﻿@namespace Thinktecture.Blazor.PwaUpdate
+
+@if (_newVersionAvailable)
 {
     @if (ChildContent is not null)
     {
@@ -11,7 +13,7 @@
                 @InformationMessage
             </div>
             <div class="actions">
-                <div class="update" onclick="@Reload">
+                <div class="update" onclick="@(() => Reload())">
                     @UpdateActionLabel
                 </div>
                 <div class="close" onclick="@(() => CollapseModal())">

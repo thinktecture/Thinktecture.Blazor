@@ -34,7 +34,7 @@ jobs:
         uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
         with:
           html_path: dist/Web/wwwroot/index.html
-          base_href: /BlazorOnGitHubPages/
+          base_href: /Thinktecture.Blazor/
 
       # copy index.html to 404.html to serve the same file when a file is not found
       - name: copy index.html to 404.html

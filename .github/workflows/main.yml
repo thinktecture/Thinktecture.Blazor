@@ -27,15 +27,15 @@ jobs:
           
       # Publishes Blazor project to the release-folder
       - name: Publish .NET Core Project
-        run: dotnet publish samples/Thinktecture.Blazor.Sample/Thinktecture.Blazor.Sample.csproj -c:Release -p:GHPages=true -o --nologo
+        run: dotnet publish samples/Thinktecture.Blazor.Sample/Thinktecture.Blazor.Sample.csproj -c:Release -p:GHPages=true -o dist/Web --nologo
 
       # changes the base-tag in index.html from '/' to 'Thinktecture.Blazor' to match GitHub Pages repository subdirectory
       - name: Change base-tag in index.html from / to Thinktecture.Blazor.Sample
-        run: sed -i 's/<base href="\/" \/>/<base href="\/BlazorGitHubPagesDemo\/" \/>/g' release/wwwroot/index.html
+        run: sed -i 's/<base href="\/" \/>/<base href="\/Thinktecture.Blazor\/" \/>/g' dist/Web/wwwroot/index.html
 
       - name: Commit wwwroot to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: release/wwwroot
+          FOLDER: dist/Web/wwwroot

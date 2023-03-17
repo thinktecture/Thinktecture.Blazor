@@ -30,8 +30,11 @@ jobs:
         run: dotnet publish samples/Thinktecture.Blazor.Sample/Thinktecture.Blazor.Sample.csproj -c:Release -p:GHPages=true -o dist/Web --nologo
 
       # changes the base-tag in index.html from '/' to 'Thinktecture.Blazor' to match GitHub Pages repository subdirectory
-      - name: Change base-tag in index.html from / to Thinktecture.Blazor.Sample
-        run: sed -i 's/<base href="\/" \/>/<base href="\/Thinktecture.Blazor\/" \/>/g' dist/Web/wwwroot/index.html
+      - name: Rewrite base href
+        uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
+        with:
+          html_path: dist/Web/wwwroot/index.html
+          base_href: /BlazorOnGitHubPages/
 
       # copy index.html to 404.html to serve the same file when a file is not found
       - name: copy index.html to 404.html

@@ -33,6 +33,14 @@ jobs:
       - name: Change base-tag in index.html from / to Thinktecture.Blazor.Sample
         run: sed -i 's/<base href="\/" \/>/<base href="\/Thinktecture.Blazor\/" \/>/g' dist/Web/wwwroot/index.html
 
+      # copy index.html to 404.html to serve the same file when a file is not found
+      - name: copy index.html to 404.html
+        run: cp dist/Web/wwwroot/index.html dist/Web/wwwroot/404.html
+
+      # add .nojekyll file to tell GitHub pages to not treat this as a Jekyll project. (Allow files and folders starting with an underscore)
+      - name: Add .nojekyll file
+        run: touch dist/Web/wwwroot/.nojekyll
+
       - name: Commit wwwroot to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:

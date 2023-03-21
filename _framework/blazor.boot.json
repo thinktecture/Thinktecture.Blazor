@@ -47,7 +47,8 @@
       "Thinktecture.Blazor.AsyncClipboard.dll": "sha256-peUVQK+\/BmkSTR86haSt5tMhig+2\/+NhZX4qM9CyanE=",
       "Thinktecture.Blazor.Badging.dll": "sha256-Pby49DqKO7+HDSCRi5BJp9mhUZpCTVF4RJB\/dIaeTzQ=",
       "Thinktecture.Blazor.FileHandling.dll": "sha256-ukVJLn8c82fmbnvjP8ereYqUcy0zLK8fckav9tBdWw4=",
-      "Thinktecture.Blazor.Sample.dll": "sha256-a98McS9IuSj2XjlaJHbwv\/PiRjc8nA3qOI9Fee\/LRyg=",
+      "Thinktecture.Blazor.PwaUpdate.dll": "sha256-GPdQ+MqQIqYhsTaS1TTDc+gpSx1UhGZuLduEHPe59BU=",
+      "Thinktecture.Blazor.Sample.dll": "sha256-R5ERD854V31zgLg0V0GIlSB88jQOH2zokr0E+w8egw0=",
       "Thinktecture.Blazor.WebShare.dll": "sha256-O3oUa4PG4uTv+etM08jDaYfxFJq3vdHXI1Y4FkAa61M="
     },
     "extensions": null,

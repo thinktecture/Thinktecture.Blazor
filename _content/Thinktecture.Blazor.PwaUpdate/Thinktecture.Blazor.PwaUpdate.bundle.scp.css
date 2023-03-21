@@ -1,0 +1,159 @@
+/* _content/Thinktecture.Blazor.PwaUpdate/UpdateModal.razor.rz.scp.css */
+.information[b-y417k1btqe] {
+    --close-icon-color: 255, 255, 255;
+    --action-button-color: 208, 188, 255;
+    --modal-background: #313033;
+    --on-modal-background: #F4EFF4;
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    min-height: 3rem;
+    width: 60vw;
+    min-width: 10rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 0.5rem;
+    background-color: var(--modal-background);
+    color: var(--on-modal-background);
+    border-radius: 0.25rem;
+    animation: fadein-b-y417k1btqe 2s ease-out;
+}
+
+    .information .text[b-y417k1btqe] {
+        flex: 1;
+        padding: 0.5rem;
+    }
+
+    .information .actions[b-y417k1btqe] {
+        display: flex;
+        align-items: center;
+    }
+
+        .information .actions .update[b-y417k1btqe] {
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            padding: 0 1.5rem;
+            color: rgb(var(--action-button-color));
+            border-radius: 1.875rem;
+            cursor: pointer;
+        }
+
+            .information .actions .update:hover[b-y417k1btqe] {
+                background-color: rgba(var(--action-button-color), 0.08);
+            }
+
+            .information .actions .update:active[b-y417k1btqe] {
+                background-color: rgba(var(--action-button-color), 0.12);
+            }
+
+        .information .actions .close[b-y417k1btqe] {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(var(--close-icon-color));
+            margin-right: 0.25rem;
+            border-radius: 50%;
+            cursor: pointer;
+            align-self: flex-end;
+        }
+
+            .information .actions .close:hover[b-y417k1btqe] {
+                background-color: rgba(var(--close-icon-color), 0.08);
+            }
+
+            .information .actions .close:active[b-y417k1btqe] {
+                background-color: rgba(var(--close-icon-color), 0.12);
+            }
+            /*<!-- ! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->*/
+            .information .actions .close .close-icon[b-y417k1btqe] {
+                background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="24" height="24" fill="white"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>');
+                background-size: cover;
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+
+    .information.collapse[b-y417k1btqe] {
+        top: -100%;
+        opacity: 0;
+        animation: fadeout-b-y417k1btqe 2s ease-out;
+    }
+
+@keyframes fadein-b-y417k1btqe {
+    from {
+        top: -100%;
+    }
+
+    to {
+        top: 2rem;
+    }
+}
+
+@keyframes fadeout-b-y417k1btqe {
+    from {
+        opacity: 1;
+        top: 2rem;
+    }
+
+    to {
+        opacity: 0;
+        top: -100%;
+    }
+}
+
+@media (max-width: 1023px) {
+    .information[b-y417k1btqe] {
+        right: 1rem;
+        min-width: 20rem;
+        font-size: 0.75rem;
+        gap: 0.25rem;
+    }
+
+        .information .actions .update[b-y417k1btqe] {
+            height: 2.25rem;
+            font-size: 0.75rem;
+        }
+
+        .information .actions .close[b-y417k1btqe] {
+            width: 2.25rem;
+            height: 2.25rem;
+        }
+
+            .information .actions .close .close-icon[b-y417k1btqe] {
+                width: 1.25rem;
+                height: 1.25rem;
+            }
+}
+
+@media (max-width: 767px) {
+    .information[b-y417k1btqe] {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 0.7rem;
+        padding: 0.5rem;
+    }
+
+        .information .actions[b-y417k1btqe] {
+            align-self: flex-end;
+        }
+
+            .information .actions .update[b-y417k1btqe] {
+                height: 2rem;
+                font-size: 0.7rem;
+            }
+
+            .information .actions .close[b-y417k1btqe] {
+                width: 2rem;
+                height: 2rem;
+            }
+
+                .information .actions .close .close-icon[b-y417k1btqe] {
+                    width: 1rem;
+                    height: 1rem;
+                }
+}

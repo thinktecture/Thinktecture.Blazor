@@ -325,9 +325,9 @@
       "url": "_content\/Thinktecture.Blazor.WebShare\/Thinktecture.Blazor.WebShare.js"
     },
     {
-      "hash": "sha256-TrDEBBZw+KyFsbgwlm9mxjDSZEHYzPlPjk2XEsWP5lg=",
+      "hash": "sha256-VQZnAnWL8oVkpGb6re2kc0MShn6jpveVR09cTFDbF1g=",
       "url": "_content\/Thinktecture.Blazor.PwaUpdate\/Thinktecture.Blazor.PwaUpdate.bundle.scp.css"
     }
   ],
-  "version": "0uLAXGTy"
+  "version": "RlXZTmZa"
 };

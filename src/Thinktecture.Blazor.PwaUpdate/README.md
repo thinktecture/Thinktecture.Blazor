@@ -59,12 +59,11 @@ Please be aware of the potential implications this may have:
 If the application relies on a certain version of the service worker or its cache while it is running, this may lead to errors during runtime.
 In Blazor project exists a service worker file `service-worker.published.js`, where a row needs to be added.
 
-```JavaScript
+```diff
 async function onInstall(event) {
     console.info('Service worker: Install');
-    self.skipWaiting(); // --> THIS CALL MUST BE ADDED
-
-   //...more code
++   self.skipWaiting();
+    // … more code
 }
 ```
 

@@ -57,7 +57,7 @@ This skips the service worker's waiting phase, and the new version becomes activ
 A reload then leads to the new version of the application the be shown.
 Please be aware of the potential implications this may have:
 If the application relies on a certain version of the service worker or its cache while it is running, this may lead to errors during runtime.
-In Blazor project exists a service worker file `service-worker.published.js`, where a row needs to be added.
+If you want to opt into this behavior, add the following line to the published service worker file `service-worker.published.js`:
 
 ```diff
 async function onInstall(event) {

@@ -51,7 +51,12 @@ To use the default UpdateModal component on the hole app razor files, register i
 
 ### Adapt Publish ServiceWorker
 
-To get to actual service worker use the `skipWaiting`-method in the service worker. This method forces the waiting service worker to become the active service worker.
+By default, service workers will only update when all tabs of the controlled websites have been closed.
+To be able to update an application on reload, you need to call the `skipWaiting()` method of the service worker upon installation.
+This skips the service worker's waiting phase, and the new version becomes active instantly.
+A reload then leads to the new version of the application the be shown.
+Please be aware of the potential implications this may have:
+If the application relies on a certain version of the service worker or its cache while it is running, this may lead to errors during runtime.
 In Blazor project exists a service worker file `service-worker.published.js`, where a row needs to be added.
 
 ```JavaScript

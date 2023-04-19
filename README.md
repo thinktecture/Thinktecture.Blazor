@@ -18,6 +18,10 @@ The File Handling API allows you to register your Progressive Web App as a file 
 
 The Web Share API allows you to share a text, title, URL, or files with another application installed on the user's system via the share functionality provided by the operating system.
 
+## [Thinktecture.Blazor.PwaUpdate](src/Thinktecture.Blazor.PwaUpdate/README.md)
+
+This package allows you to display a notification as soon as an update of your application is ready for installation.
+
 ## [Thinktecture.Blazor.GrpcWeb.DevTools](src/Thinktecture.Blazor.GrpcWeb.DevTools/README.md)
 
 Connect your Blazor App with gRPC-Web Developer Tools.

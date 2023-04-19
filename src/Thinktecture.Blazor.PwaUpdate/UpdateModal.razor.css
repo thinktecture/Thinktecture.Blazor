@@ -1,0 +1,157 @@
+﻿.information {
+    --close-icon-color: 255, 255, 255;
+    --action-button-color: 208, 188, 255;
+    --modal-background: #313033;
+    --on-modal-background: #F4EFF4;
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    min-height: 3rem;
+    width: 60vw;
+    min-width: 10rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 0.5rem;
+    background-color: var(--modal-background);
+    color: var(--on-modal-background);
+    border-radius: 0.25rem;
+    animation: fadein 2s ease-out;
+}
+
+    .information .text {
+        flex: 1;
+        padding: 0.5rem;
+    }
+
+    .information .actions {
+        display: flex;
+        align-items: center;
+    }
+
+        .information .actions .update {
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            padding: 0 1.5rem;
+            color: rgb(var(--action-button-color));
+            border-radius: 1.875rem;
+            cursor: pointer;
+        }
+
+            .information .actions .update:hover {
+                background-color: rgba(var(--action-button-color), 0.08);
+            }
+
+            .information .actions .update:active {
+                background-color: rgba(var(--action-button-color), 0.12);
+            }
+
+        .information .actions .close {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(var(--close-icon-color));
+            margin-right: 0.25rem;
+            border-radius: 50%;
+            cursor: pointer;
+            align-self: flex-end;
+        }
+
+            .information .actions .close:hover {
+                background-color: rgba(var(--close-icon-color), 0.08);
+            }
+
+            .information .actions .close:active {
+                background-color: rgba(var(--close-icon-color), 0.12);
+            }
+            .information .actions .close .close-icon {
+                background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460.775 460.775" width="14" height="14" fill="white"><path d="M285.08 230.397 456.218 59.27c6.076-6.077 6.076-15.911 0-21.986L423.511 4.565a15.55 15.55 0 0 0-21.985 0l-171.138 171.14L59.25 4.565a15.551 15.551 0 0 0-21.985 0L4.558 37.284c-6.077 6.075-6.077 15.909 0 21.986l171.138 171.128L4.575 401.505c-6.074 6.077-6.074 15.911 0 21.986l32.709 32.719a15.555 15.555 0 0 0 21.986 0l171.117-171.12 171.118 171.12a15.551 15.551 0 0 0 21.985 0l32.709-32.719c6.074-6.075 6.074-15.909 0-21.986L285.08 230.397z"/></svg>');
+                background-size: cover;
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+
+    .information.collapse {
+        top: -100%;
+        opacity: 0;
+        animation: fadeout 2s ease-out;
+    }
+
+@keyframes fadein {
+    from {
+        top: -100%;
+    }
+
+    to {
+        top: 2rem;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+        top: 2rem;
+    }
+
+    to {
+        opacity: 0;
+        top: -100%;
+    }
+}
+
+@media (max-width: 1023px) {
+    .information {
+        right: 1rem;
+        min-width: 20rem;
+        font-size: 0.75rem;
+        gap: 0.25rem;
+    }
+
+        .information .actions .update {
+            height: 2.25rem;
+            font-size: 0.75rem;
+        }
+
+        .information .actions .close {
+            width: 2.25rem;
+            height: 2.25rem;
+        }
+
+            .information .actions .close .close-icon {
+                width: 1.25rem;
+                height: 1.25rem;
+            }
+}
+
+@media (max-width: 767px) {
+    .information {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 0.7rem;
+        padding: 0.5rem;
+    }
+
+        .information .actions {
+            align-self: flex-end;
+        }
+
+            .information .actions .update {
+                height: 2rem;
+                font-size: 0.7rem;
+            }
+
+            .information .actions .close {
+                width: 2rem;
+                height: 2rem;
+            }
+
+                .information .actions .close .close-icon {
+                    width: 1rem;
+                    height: 1rem;
+                }
+}

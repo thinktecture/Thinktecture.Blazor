@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Thinktecture.Blazor.AsyncClipboard;
 using Thinktecture.Blazor.Badging;
 using Thinktecture.Blazor.FileHandling;
+using Thinktecture.Blazor.PwaUpdate;
 using Thinktecture.Blazor.Sample;
 using Thinktecture.Blazor.WebShare;
 
@@ -15,5 +16,6 @@ builder.Services.AddAsyncClipboardService();
 builder.Services.AddBadgingService();
 builder.Services.AddFileHandlingService();
 builder.Services.AddWebShareService();
+builder.Services.AddUpdateService();
 
 await builder.Build().RunAsync();

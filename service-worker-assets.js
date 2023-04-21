@@ -105,7 +105,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-ms6IhuPccpZTwqjNXrvSA8iQg\/zGDUxwMzXgzEs5+N4=",
+      "hash": "sha256-t7Nw3V5vQNRnWedfJsYnQ8P3kd0kzKdJ+KtNyrmTDlg=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -269,11 +269,11 @@
       "url": "_framework\/Thinktecture.Blazor.FileHandling.dll"
     },
     {
-      "hash": "sha256-0l5RZAX4r3X84DRLc7ONxSK0sjm5uvw0whmrvC2XpkE=",
+      "hash": "sha256-vi8kaWioMhVZFj7QkoYiGjjAkZS3ut3rgrOhXPERsIQ=",
       "url": "_framework\/Thinktecture.Blazor.PwaUpdate.dll"
     },
     {
-      "hash": "sha256-z\/rL1tRvTjrWP4ytDeLveSw6Kj1LPIORiiCynVF8h7g=",
+      "hash": "sha256-Q3YkyP\/4dhJ6tl9Zs6mZJ7d5jYnzWlc6e1CAkEQ2ocA=",
       "url": "_framework\/Thinktecture.Blazor.Sample.dll"
     },
     {
@@ -329,5 +329,5 @@
       "url": "_content\/Thinktecture.Blazor.PwaUpdate\/Thinktecture.Blazor.PwaUpdate.bundle.scp.css"
     }
   ],
-  "version": "JA7uyKMI"
+  "version": "eaLC4QYS"
 };

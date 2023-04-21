@@ -1,18 +1,43 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
+    <PropertyGroup>
+        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+        <Title>Blazor PWA Update wrapper</Title>
+        <Description>PWA Update wrapper implementation for Blazor.</Description>
+        <PackageId>Thinktecture.Blazor.PwaUpdate</PackageId>
+        <Version>1.1.1</Version>
+        <PackageIcon>icon.png</PackageIcon>
+        <Authors>Patrick Jahr, Christian Liebel</Authors>
+        <Company>Thinktecture</Company>
+        <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageTags>ProjectFugu PWA Update ServiceWorker Blazor Wasm Wrapper JSInterop</PackageTags>
+        <RepositoryUrl>https://github.com/thinktecture/Thinktecture.Blazor</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="README.md">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+        <None Include="..\..\icon.png">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+    </ItemGroup>
 
 
-  <ItemGroup>
-    <SupportedPlatform Include="browser" />
-  </ItemGroup>
+    <ItemGroup>
+        <SupportedPlatform Include="browser"/>
+    </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.2" />
-  </ItemGroup>
-
+    <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.16"/>
+    </ItemGroup>
+    <ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.5"/>
+    </ItemGroup>
 </Project>

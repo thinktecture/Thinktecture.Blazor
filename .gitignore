@@ -352,3 +352,4 @@ MigrationBackup/
 
 /samples/**/Properties/PublishProfiles/
 /samples/**/Properties/ServiceDependencies/
+.idea

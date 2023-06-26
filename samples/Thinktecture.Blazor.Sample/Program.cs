@@ -5,6 +5,7 @@ using Thinktecture.Blazor.Badging;
 using Thinktecture.Blazor.FileHandling;
 using Thinktecture.Blazor.PwaUpdate;
 using Thinktecture.Blazor.Sample;
+using Thinktecture.Blazor.ScreenWakeLock;
 using Thinktecture.Blazor.WebShare;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
@@ -17,5 +18,6 @@ builder.Services.AddBadgingService();
 builder.Services.AddFileHandlingService();
 builder.Services.AddWebShareService();
 builder.Services.AddUpdateService();
+builder.Services.AddScreenWakeLockService();
 
 await builder.Build().RunAsync();

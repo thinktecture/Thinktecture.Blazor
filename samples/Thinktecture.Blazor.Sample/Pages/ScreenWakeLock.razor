@@ -1,0 +1,17 @@
+@page "/screen-wake-lock"
+
+@if (_isSupported)
+{
+    <div>
+        <label>@(_enteredFullScreen ? "Exit Fullscreen" : "Enter Fullscreen")</label>
+        <InputCheckbox Value="@_enteredFullScreen" ValueChanged="@(ToggleFullScreen)" ValueExpression="() => _enteredFullScreen"></InputCheckbox>
+    </div>
+    <div>
+        <label>@(_wakeLockRequested ? "Request Screen wake lock" : "Release Screen wake lock")</label>
+        <InputCheckbox Value="@_wakeLockRequested" ValueChanged="@(ToggleScreenWakeLock)" ValueExpression="() => _wakeLockRequested"></InputCheckbox>
+    </div>
+}
+else
+{
+    <p>Screen wake lock is not supported on your device or browser.</p>
+}

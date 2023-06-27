@@ -5,6 +5,7 @@ using Thinktecture.Blazor.Badging;
 using Thinktecture.Blazor.FileHandling;
 using Thinktecture.Blazor.PwaUpdate;
 using Thinktecture.Blazor.Sample;
+using Thinktecture.Blazor.WebBluetooth;
 using Thinktecture.Blazor.WebShare;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
@@ -16,6 +17,7 @@ builder.Services.AddAsyncClipboardService();
 builder.Services.AddBadgingService();
 builder.Services.AddFileHandlingService();
 builder.Services.AddWebShareService();
+builder.Services.AddWebBluetoothService();
 builder.Services.AddUpdateService();
 
 await builder.Build().RunAsync();

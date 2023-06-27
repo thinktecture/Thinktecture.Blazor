@@ -1,0 +1,26 @@
+@page "/web-bluetooth"
+
+<h3>WebBluetooth</h3>
+
+@if (_isSupported)
+{
+    <button class="btn-outline-primary" @onclick="GetDevice">Request Device</button>
+    @if (_requestDevice)
+    {
+        <p>Request Bluetooth device...</p>
+    }
+    else if (_device is not null)
+    {
+        <p>@_device.Id</p>
+        <p>@_device.Name</p>
+        <p>@_device.Connected</p>
+    }
+    else
+    {
+        <p>No device found.</p>
+    }
+}
+else
+{
+    <p>The Web Bluetooth API is not supported on this device or browser.</p>
+}

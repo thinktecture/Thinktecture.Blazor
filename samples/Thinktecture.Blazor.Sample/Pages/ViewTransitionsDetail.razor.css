@@ -1,0 +1,16 @@
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 15rem 1.5rem 1.5rem 1.5rem;
+}
+
+.back {
+    position: absolute;
+    left: 1.5rem;
+    top: 1rem;
+    z-index: 100;
+    view-transition-name: details-back;
+}

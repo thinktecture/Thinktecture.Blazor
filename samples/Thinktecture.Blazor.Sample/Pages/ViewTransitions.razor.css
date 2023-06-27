@@ -1,0 +1,111 @@
+.collection {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    padding: 6rem 2rem 2rem;
+}
+
+.collection img {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.collection .user-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    width: 190px;
+    height: 254px;
+    border-radius: 30px;
+    box-shadow: -5px -5px 9px rgba(255,255,255,0.45), 5px 5px 9px rgba(94,104,121,0.3);
+}
+
+.collection .user-card.active {
+    view-transition-name: user-card;
+}
+
+.collection .user-card.active img {
+    view-transition-name: user-image;
+}
+
+.collection .user-card.active span {
+    view-transition-name: user-name;
+}
+
+.collection .user-card:active {
+    box-shadow: inset -5px -5px 9px rgba(255,255,255,0.45), inset 5px 5px 9px rgba(94,104,121,0.3);
+}
+
+.dialog {
+    position: absolute;
+    width: 30rem;
+    height: 42rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    padding: 2rem;
+    border-radius: 30px;
+    background: #dde1e7;
+    box-shadow: -5px -5px 9px rgba(255,255,255,0.45), 5px 5px 9px rgba(94,104,121,0.3);
+}
+
+.dialog.visible {
+    opacity: 1;
+    z-index: 100;
+}
+
+.dialog ::deep .action {
+    align-self: flex-end;
+}
+
+.dialog ::deep .user-dialog img {
+    margin-top: -3rem;
+}
+
+@media (max-width: 763px) {
+    .collection {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .collection img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .collection .user-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem;
+        width: 100%;
+        height: 180px;
+        border-radius: 30px;
+    }
+
+    .collection .user-card span {
+        text-align: center;
+    }
+
+    .dialog {
+        width: 88vw;
+        height: 78vh;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+}

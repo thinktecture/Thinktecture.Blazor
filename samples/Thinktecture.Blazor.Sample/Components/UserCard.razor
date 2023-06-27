@@ -1,0 +1,15 @@
+﻿<div class="card user @(Active ? "active" : string.Empty) @CssClass">
+    <img alt="" src="@User.Avatar"/>
+    <span>@User.FirstName @User.LastName</span>
+</div>
+<div class="additional-info @(Active ? "active" : string.Empty)">
+    <div class="card credit">
+        <span>@User.CreditCard.CcNumber</span>
+    </div>
+    <div class="card adress">
+        <span>@User.Address.StreetName</span>
+        <span>@User.Address.StreetAddress</span>
+        <span>@User.Address.City</span>
+        <span>@User.Address.Country</span>
+    </div>
+</div>

@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Fluxor.Blazor.Web" Version="5.9.0" />
+    <PackageReference Include="Fluxor.Blazor.Web.ReduxDevTools" Version="5.9.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.2" PrivateAssets="all" />
   </ItemGroup>
@@ -18,6 +20,7 @@
     <ProjectReference Include="..\..\src\Thinktecture.Blazor.FileHandling\Thinktecture.Blazor.FileHandling.csproj" />
     <ProjectReference Include="..\..\src\Thinktecture.Blazor.PwaUpdate\Thinktecture.Blazor.PwaUpdate.csproj" />
     <ProjectReference Include="..\..\src\Thinktecture.Blazor.ScreenWakeLock\Thinktecture.Blazor.ScreenWakeLock.csproj" />
+    <ProjectReference Include="..\..\src\Thinktecture.Blazor.ViewTransitions\Thinktecture.Blazor.ViewTransitions.csproj" />
     <ProjectReference Include="..\..\src\Thinktecture.Blazor.WebShare\Thinktecture.Blazor.WebShare.csproj" />
   </ItemGroup>
 

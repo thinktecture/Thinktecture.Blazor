@@ -1,0 +1,14 @@
+.btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 100vh;
+    box-shadow: -10px -10px 15px rgba(255,255,255,0.45), 10px 10px 15px rgba(94,104,121,0.3);
+}
+
+.btn-icon.toggled {
+    box-shadow: inset -5px -5px 9px rgba(255,255,255,0.45), inset 5px 5px 9px rgba(94,104,121,0.3);
+    box-shadow: -10px -10px 15px rgba(255,255,255,0.45), 10px 10px 15px rgba(94,104,121,0.3), inset -10px -10px 15px rgba(255,255,255,0.45), inset 10px 10px 15px rgba(94,104,121,0.3);
+}

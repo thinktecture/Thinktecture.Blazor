@@ -1,0 +1,10 @@
+@page "/view-transitions/details"
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
+<div class="back">
+    <IconButton Icon="oi oi-chevron-left" Clicked="GoBack"></IconButton>
+</div>
+
+<div class="wrapper">
+    <UserCard Active="@true" User="_user"></UserCard>
+</div>

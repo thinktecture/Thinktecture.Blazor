@@ -1,0 +1,35 @@
+@page "/view-transitions"
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
+@if (_loading)
+{
+    <p>Loading...</p>
+}
+else if (_users.Any())
+{
+    <div class="collection">
+        @foreach (var user in _users)
+        {
+            <div class="@(_selectedUser?.Id == user.Id ? "user-card active" : "user-card")" @onclick=@(() => OpenDetails(user))>
+                <img src="@user.Avatar" alt=""/>
+                <span>@user.FirstName @user.LastName</span>
+            </div>
+        }
+    </div>
+    
+    <div style="position: absolute; left: 1.5rem; top: 1rem;">
+        <ToggleIconButton Icon="oi oi-browser" ToggledIcon="oi oi-comment-square" Toggled="_openDialog" ToggledChanged="ToggleViewMode"></ToggleIconButton>
+    </div>
+}
+else
+{
+    <p>No images found...</p>
+}
+
+@if (_dialogUser is not null)
+{
+    <div class="dialog @(_showDialog ? "visible" : string.Empty)">
+        <UserCard Active="_showDialog" User="_dialogUser" CssClass="user-dialog"></UserCard>
+        <IconButton Class="action" Icon="oi oi-x" Clicked="CloseDialog"></IconButton>
+    </div>
+}

@@ -3,10 +3,6 @@
 @if (_isSupported)
 {
     <div>
-        <label>@(_enteredFullScreen ? "Exit Fullscreen" : "Enter Fullscreen")</label>
-        <InputCheckbox Value="@_enteredFullScreen" ValueChanged="@(ToggleFullScreen)" ValueExpression="() => _enteredFullScreen"></InputCheckbox>
-    </div>
-    <div>
         <label>@(_wakeLockRequested ? "Request Screen wake lock" : "Release Screen wake lock")</label>
         <InputCheckbox Value="@_wakeLockRequested" ValueChanged="@(ToggleScreenWakeLock)" ValueExpression="() => _wakeLockRequested"></InputCheckbox>
     </div>

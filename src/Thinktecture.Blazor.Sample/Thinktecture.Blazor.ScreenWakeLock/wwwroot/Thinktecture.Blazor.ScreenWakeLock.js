@@ -2,21 +2,13 @@ export function isSupported() {
     return isSupportedInWindow() || isSupportedInNavigator();
 }
 
-export async function enterFullScreen() {
-    await document.documentElement.requestFullscreen();
-}
-
-export async function exitFullScreen() {
-    await document.exitFullscreen();
-}
-
 let wakeLock = null;
 
-export async function requestWakeLock() {
+export async function requestWakeLock(component, method) {
     if (isSupportedInWindow()) {
-        requestWakeLockWindow();
+        requestWakeLockWindow(component, method);
     } else if (isSupportedInNavigator()) {
-        await requestWakeLockNavigator();
+        await requestWakeLockNavigator(component, method);
     }
 }
 
@@ -27,32 +19,27 @@ export function releaseWakeLock() {
     }
 }
 
-async function requestWakeLockNavigator() {
+async function requestWakeLockNavigator(component, method) {
     const requestWakeLock = async () => {
         try {
             wakeLock = await navigator.wakeLock.request('screen');
             wakeLock.addEventListener('release', (e) => {
                 console.log(e);
-                wakeLockCheckbox.checked = false;
-                statusDiv.textContent = 'Wake Lock was released';
                 console.log('Wake Lock was released');
+                component.invokeMethodAsync(method);
             });
-            wakeLockCheckbox.checked = true;
-            statusDiv.textContent = 'Wake Lock is active';
             console.log('Wake Lock is active');
         } catch (e) {
-            wakeLockCheckbox.checked = false;
-            statusDiv.textContent = `${e.name}, ${e.message}`;
             console.error(`${e.name}, ${e.message}`);
+            throw e;
         }
     };
     
     releaseWakeLock();
-
     await requestWakeLock();
 }
 
-function requestWakeLockWindow() {
+function requestWakeLockWindow(component, method) {
     const requestWakeLock = () => {
         const controller = new AbortController();
         const signal = controller.signal;
@@ -60,18 +47,17 @@ function requestWakeLockWindow() {
             .catch((e) => {
                 if (e.name === 'AbortError') {
                     console.log('Wake Lock was aborted');
+                    component.invokeMethodAsync(method);
                 } else {
                     console.error(`${e.name}, ${e.message}`);
+                    throw e;
                 }
             });
         console.log('Wake Lock is active');
         return controller;
     };
     
-    if (wakeLock) {
-        releaseWakeLock();
-    }
-
+    releaseWakeLock();
     wakeLock = requestWakeLock();
 }
 

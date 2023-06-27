@@ -7,28 +7,17 @@ public partial class ScreenWakeLock
 {
     [Inject] private IScreenWakeLockService _screenWakeLockService { get; set; } = default!;
 
-    private bool _enteredFullScreen = false;
-    private bool _wakeLockRequested = false;
-    private bool _isSupported = false;
+    private bool _wakeLockRequested;
+    private bool _isSupported;
 
     protected override async Task OnInitializedAsync()
     {
         _isSupported = await _screenWakeLockService.IsSupportedAsync();
+        _screenWakeLockService.WakeLockReleased = () =>
+        {
+            _wakeLockRequested = false;
+        };
         await base.OnInitializedAsync();
-    }
-
-    private async Task ToggleFullScreen()
-    {
-        if (_enteredFullScreen)
-        {
-            await _screenWakeLockService.ExitFullScreenAsync();
-        }
-        else
-        {
-            await _screenWakeLockService.EnterFullScreenAsync();
-        }
-
-        _enteredFullScreen = !_enteredFullScreen;
     }
 
     private async Task ToggleScreenWakeLock()
@@ -39,7 +28,16 @@ public partial class ScreenWakeLock
         }
         else
         {
-            await _screenWakeLockService.RequestWakeLockAsync();
+            try
+            {
+                await _screenWakeLockService.RequestWakeLockAsync();
+                _wakeLockRequested = true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Request screen wake lock failed. Error: {e.Message}");
+                _wakeLockRequested = false;
+            }
         }
     }
 }

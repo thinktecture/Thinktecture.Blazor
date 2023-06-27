@@ -105,7 +105,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-chrTejpYXYmYXnExRdrEBmUm61ffzJvfSZk\/F+8Yo\/g=",
+      "hash": "sha256-03LKFu\/esMXcaiK6exq91TjWS\/Xy3vCqdpzvwa97s60=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -305,7 +305,7 @@
       "url": "_framework\/Thinktecture.Blazor.Sample.dll"
     },
     {
-      "hash": "sha256-S71cdz113vL4cVPL+5cZ7OHnfdcBU01rvGuRtusYFRY=",
+      "hash": "sha256-eMDIxrf4k9\/zgwAwhxUy6deGgS8uEsnJuXCgpy92uig=",
       "url": "_framework\/Thinktecture.Blazor.ScreenWakeLock.dll"
     },
     {
@@ -365,5 +365,5 @@
       "url": "_content\/Thinktecture.Blazor.PwaUpdate\/Thinktecture.Blazor.PwaUpdate.bundle.scp.css"
     }
   ],
-  "version": "3kTGfeB6"
+  "version": "xhBsiLiP"
 };

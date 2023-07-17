@@ -16,6 +16,7 @@ public partial class ScreenWakeLock
         _screenWakeLockService.WakeLockReleased = () =>
         {
             _wakeLockRequested = false;
+            StateHasChanged();
         };
         await base.OnInitializedAsync();
     }
@@ -33,9 +34,8 @@ public partial class ScreenWakeLock
                 await _screenWakeLockService.RequestWakeLockAsync();
                 _wakeLockRequested = true;
             }
-            catch (Exception e)
+            catch
             {
-                Console.WriteLine($"Request screen wake lock failed. Error: {e.Message}");
                 _wakeLockRequested = false;
             }
         }

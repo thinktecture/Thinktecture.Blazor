@@ -59,7 +59,7 @@ else
 
 ### Request screen wake lock
 
-To request a screen wake lock, you need to call the `RequestWakeLockAsync` method from the `IScreenWakeLockService` service.
+To request a screen wake lock, you need to call the `RequestWakeLockAsync()` method from the `IScreenWakeLockService` service.
 The browser can refuse the request for various reasons (for example, because the battery charge level is too low), 
 so it's a good practice to wrap the call in a `try…catch` statement. 
 The exception's message will contain more details in case of failure.

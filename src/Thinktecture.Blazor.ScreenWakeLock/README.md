@@ -4,7 +4,7 @@
 
 ## Introduction
 
-A Blazor wrapper for the [ScreenWakeLock API](https://www.w3.org/TR/screen-wake-lock/).
+A Blazor wrapper for the [Screen Wake Lock API](https://www.w3.org/TR/screen-wake-lock/).
 
 The ScreenWakeLock API allows web applications to request a screen wake lock. Under the right conditions, and if allowed, the screen wake lock prevents the system from turning off a device's screen.
 

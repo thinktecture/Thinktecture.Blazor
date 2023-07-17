@@ -3,7 +3,7 @@
 @if (_isSupported)
 {
     <div>
-        <label>@(_wakeLockRequested ? "Request Screen wake lock" : "Release Screen wake lock")</label>
+        <label>@(_wakeLockRequested ? "Request screen wake lock" : "Release screen wake lock")</label>
         <InputCheckbox Value="@_wakeLockRequested" ValueChanged="@(ToggleScreenWakeLock)" ValueExpression="() => _wakeLockRequested"></InputCheckbox>
     </div>
 }

@@ -1,15 +1,13 @@
-export function isSupported() {
-    return isSupportedInWindow() || isSupportedInNavigator();
-}
-
 let wakeLock = null;
 
 export async function requestWakeLock(component, method) {
-    if (isSupportedInWindow()) {
-        requestWakeLockWindow(component, method);
-    } else if (isSupportedInNavigator()) {
+    if (isSupported()) {
         await requestWakeLockNavigator(component, method);
     }
+}
+
+export function isSupported() {
+    return 'wakeLock' in navigator && 'request' in navigator.wakeLock;
 }
 
 export function releaseWakeLock() {
@@ -33,31 +31,4 @@ async function requestWakeLockNavigator(component, method) {
     
     releaseWakeLock();
     await requestWakeLock();
-}
-
-function requestWakeLockWindow(component, method) {
-    const requestWakeLock = () => {
-        const controller = new AbortController();
-        const signal = controller.signal;
-        window.WakeLock.request('screen', {signal})
-            .catch((e) => {
-                if (e.name === 'AbortError') {
-                    component.invokeMethodAsync(method);
-                } else {
-                    throw e;
-                }
-            });
-        return controller;
-    };
-    
-    releaseWakeLock();
-    wakeLock = requestWakeLock();
-}
-
-function isSupportedInNavigator() {
-    return 'wakeLock' in navigator && 'request' in navigator.wakeLock;
-}
-
-function isSupportedInWindow() {
-    return 'WakeLock' in window && 'request' in window.WakeLock;
 }

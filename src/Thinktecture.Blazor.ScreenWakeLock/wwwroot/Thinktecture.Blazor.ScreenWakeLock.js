@@ -23,14 +23,10 @@ async function requestWakeLockNavigator(component, method) {
     const requestWakeLock = async () => {
         try {
             wakeLock = await navigator.wakeLock.request('screen');
-            wakeLock.addEventListener('release', (e) => {
-                console.log(e);
-                console.log('Wake Lock was released');
+            wakeLock.addEventListener('release', (_) => {
                 component.invokeMethodAsync(method);
             });
-            console.log('Wake Lock is active');
         } catch (e) {
-            console.error(`${e.name}, ${e.message}`);
             throw e;
         }
     };
@@ -46,14 +42,11 @@ function requestWakeLockWindow(component, method) {
         window.WakeLock.request('screen', {signal})
             .catch((e) => {
                 if (e.name === 'AbortError') {
-                    console.log('Wake Lock was aborted');
                     component.invokeMethodAsync(method);
                 } else {
-                    console.error(`${e.name}, ${e.message}`);
                     throw e;
                 }
             });
-        console.log('Wake Lock is active');
         return controller;
     };
     

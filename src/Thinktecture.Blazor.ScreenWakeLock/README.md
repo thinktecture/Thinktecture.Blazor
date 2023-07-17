@@ -18,7 +18,7 @@ You need .NET 7.0 or newer to use this library.
 
 ### Platform support
 
-[![Platform support for Web Share API](https://caniuse.bitsofco.de/image/wake-lock.png)](https://caniuse.com/?search=wake-lock)
+[![Platform support for Screen Wake Lock API](https://caniuse.bitsofco.de/image/wake-lock.png)](https://caniuse.com/?search=wake-lock)
 
 ### Installation
 

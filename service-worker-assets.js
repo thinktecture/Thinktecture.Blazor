@@ -353,7 +353,7 @@
       "url": "_content\/Thinktecture.Blazor.PwaUpdate\/Thinktecture.Blazor.PwaUpdate.js"
     },
     {
-      "hash": "sha256-vE8Yi6T19fLHlwuMpqV2e3pDs28YbfDp8qpdtV+BB58=",
+      "hash": "sha256-hXYnzrOJraF0WYstD8s31J1GVj0Rc1HD2cPQwbTEud4=",
       "url": "_content\/Thinktecture.Blazor.ScreenWakeLock\/Thinktecture.Blazor.ScreenWakeLock.js"
     },
     {
@@ -365,5 +365,5 @@
       "url": "_content\/Thinktecture.Blazor.PwaUpdate\/Thinktecture.Blazor.PwaUpdate.bundle.scp.css"
     }
   ],
-  "version": "vKNL9PcH"
+  "version": "PuYBJU51"
 };

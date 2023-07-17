@@ -1,5 +1,6 @@
 # Thinktecture.Blazor.ViewTransitions
 
+[![NuGet Downloads (official NuGet)](https://img.shields.io/nuget/dt/Thinktecture.Blazor.ViewTransitions?label=NuGet%20Downloads)](https://www.nuget.org/packages/Thinktecture.Blazor.ViewTransitions/)
 
 ## Introduction
 This package should help you to use the ViewTransition API in your Blazor application. The package contains two ways to use the ViewTransition API.

@@ -77,7 +77,7 @@ catch(Exception e)
 
 ### Release screen wake lock
 
-You also need a way to release the screen wake lock, which is achieved by calling the `ReleaseWakeLockAsync` method of the `IScreenWakeLockService` service.
+You also need a way to release the screen wake lock, which is achieved by calling the `ReleaseWakeLockAsync()` method of the `IScreenWakeLockService` service.
 
 ```csharp
 await _screenWakeLockService.ReleaseWakeLockAsync();

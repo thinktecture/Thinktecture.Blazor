@@ -49,7 +49,7 @@ This method returns a boolean to indicate whether the Screen Wake Lock API is su
 var isSupported = await screenWakeLock.IsSupportedAsync();
 if (isSupported)
 {
-    // enable share feature
+    // enable screen wake lock feature
 }
 else
 {

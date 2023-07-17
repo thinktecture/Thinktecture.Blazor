@@ -43,7 +43,7 @@ builder.Services.AddScreenWakeLockService();
 ### Checking for browser support
 
 Before using the Screen Wake Lock API, you should first test if the API is supported on the target platform by calling the `IsSupportedAsync()` method.
-This method returns a boolean to indicate whether the Web Share API is supported or not.
+This method returns a boolean to indicate whether the Screen Wake Lock API is supported or not.
 
 ```csharp
 var isSupported = await screenWakeLock.IsSupportedAsync();

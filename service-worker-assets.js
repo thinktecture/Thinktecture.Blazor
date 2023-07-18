@@ -105,7 +105,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-ygtMbdsuh2et6q9mfVM+gPBIc68V+7TXZfmEp4nAqWY=",
+      "hash": "sha256-A5jqRTT0z7yO86lnNwUN54YwT\/HEM4Aj6MhZ\/90d1f0=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -381,7 +381,7 @@
       "url": "_framework\/Thinktecture.Blazor.Sample.dll"
     },
     {
-      "hash": "sha256-szjIE3kv3mmLwZ1SeXLq16SiJO1c0D8DY\/Yhtc\/rcbI=",
+      "hash": "sha256-WpdytL82K9pXwveKQHW12sBSruL+mCdeMzcONJgqfwA=",
       "url": "_framework\/Thinktecture.Blazor.ViewTransitions.dll"
     },
     {
@@ -429,7 +429,7 @@
       "url": "_content\/Thinktecture.Blazor.PwaUpdate\/Thinktecture.Blazor.PwaUpdate.js"
     },
     {
-      "hash": "sha256-1fVJBL1AcGNh4BamQXu3qqWXr52fQdisnUb9TqQVKJI=",
+      "hash": "sha256-+rUEfRUqpa5ujJfOxzfejVEbUqZYA5uy0gLdHRrT1S8=",
       "url": "_content\/Thinktecture.Blazor.ViewTransitions\/Thinktecture.Blazor.ViewTransitions.js"
     },
     {
@@ -441,5 +441,5 @@
       "url": "_content\/Thinktecture.Blazor.PwaUpdate\/Thinktecture.Blazor.PwaUpdate.bundle.scp.css"
     }
   ],
-  "version": "ts9frnbT"
+  "version": "dFM7ASEu"
 };

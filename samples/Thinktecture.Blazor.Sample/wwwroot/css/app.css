@@ -2,7 +2,7 @@
 @import '_content/Thinktecture.Blazor.PwaUpdate/Thinktecture.Blazor.PwaUpdate.bundle.scp.css';
 
 :root {
-    --view-transition-duration: 1s;
+    --view-transition-duration: 300ms;
 }
 
 html, body {
@@ -105,7 +105,7 @@ a, .btn-link {
 
 /*VIEW TRANSTIONS ANIMATIONS*/
 ::view-transition-group(*) {
-    animation-duration: 1s;
+    animation-duration: 300ms;
 }
 
 :root::view-transition-image-pair(*) {

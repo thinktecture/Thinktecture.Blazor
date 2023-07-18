@@ -13,7 +13,7 @@
       "url": "Pages\/WebShare.razor.js"
     },
     {
-      "hash": "sha256-GUb0dLMPIBvBpsCBLwfyqZoPsFVh1Kr8DSrvU\/mFEn4=",
+      "hash": "sha256-mJp6\/NYdOEk+CcXDAEWrZ62XbGO2qpgs3I8kXQFvYCI=",
       "url": "css\/app.css"
     },
     {
@@ -105,7 +105,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-A5jqRTT0z7yO86lnNwUN54YwT\/HEM4Aj6MhZ\/90d1f0=",
+      "hash": "sha256-2t0fbXYah2Yn+r4fj2AZaXs2ndPUZ1tHeV21D4YAez0=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -293,7 +293,7 @@
       "url": "_framework\/System.ObjectModel.dll"
     },
     {
-      "hash": "sha256-xISkC4XEn8B\/Dyr0wbF0ir2UMH4INhOx2TiYB2SpdSs=",
+      "hash": "sha256-A1j\/1eR7vp8kl16g2kwYOA2og26oCB+LWiJFCvGJHDE=",
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
@@ -353,7 +353,7 @@
       "url": "_framework\/System.Text.RegularExpressions.dll"
     },
     {
-      "hash": "sha256-FYFGDEkV3Y4IovLIaFkBo15Zk+g8E+P\/beigimGyXjo=",
+      "hash": "sha256-c2X5frTu8gWaQXQRM9w0k2rfFB+mraMFxvjZ\/uoawFs=",
       "url": "_framework\/System.Threading.dll"
     },
     {
@@ -377,11 +377,11 @@
       "url": "_framework\/Thinktecture.Blazor.PwaUpdate.dll"
     },
     {
-      "hash": "sha256-1WZFu5h5I2Mn3xwxFqvFFQtI0ZWxuqYLe0agW2rlqwk=",
+      "hash": "sha256-gRNMGyciHYQXlKYnUpKJ6Knxod7crMJ98QR0PPVP4CE=",
       "url": "_framework\/Thinktecture.Blazor.Sample.dll"
     },
     {
-      "hash": "sha256-WpdytL82K9pXwveKQHW12sBSruL+mCdeMzcONJgqfwA=",
+      "hash": "sha256-C9LSfmzDef3pIA2auX\/SAfp5P+jiT9W9eTtImMJ3aDw=",
       "url": "_framework\/Thinktecture.Blazor.ViewTransitions.dll"
     },
     {
@@ -393,11 +393,11 @@
       "url": "_framework\/dotnet.7.0.9.m4b8unj6wl.js"
     },
     {
-      "hash": "sha256-6yLxDEKAqbrL5s+ByhVtoKlyQvJncNpLJ1EbCz4xfpU=",
+      "hash": "sha256-qbH3Rx0kmwmYmq5oDksO4ibTTDI2tHtLqg\/U1B+tATs=",
       "url": "_framework\/dotnet.wasm"
     },
     {
-      "hash": "sha256-AwOe5BfFIgCeTV7i3QOVQN9ZYMwMgrBuaMNiXlNvcY0=",
+      "hash": "sha256-f1eNPcSKDOlLmtHxPusP0epZgIw5sVnPItbYjIqGKIw=",
       "url": "Thinktecture.Blazor.Sample.styles.css"
     },
     {
@@ -441,5 +441,5 @@
       "url": "_content\/Thinktecture.Blazor.PwaUpdate\/Thinktecture.Blazor.PwaUpdate.bundle.scp.css"
     }
   ],
-  "version": "dFM7ASEu"
+  "version": "qYRFuWZi"
 };

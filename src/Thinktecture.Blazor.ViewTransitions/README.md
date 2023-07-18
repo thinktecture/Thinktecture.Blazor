@@ -6,7 +6,7 @@
 This package should help you to use the ViewTransition API in your Blazor application. The package contains two ways to use the ViewTransition API.
 If you want to know how the View Transition API works look [here](https://drafts.csswg.org/css-view-transitions/#viewtransition).
 
-https://github.com/patrickjahr/pazor-view-transition-api/assets/16818441/424683ed-f30c-4b14-a4db-5d770c076027
+https://github.com/thinktecture/Thinktecture.Blazor/assets/16818441/5a56379d-5e82-4f4c-a228-e8f2a6598254
 
 ## Getting started
 

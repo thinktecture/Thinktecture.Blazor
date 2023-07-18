@@ -11,8 +11,7 @@
 
 .card.user img {
     margin-top: -10rem;
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 230px;
 }
 
 .card.user.active img {

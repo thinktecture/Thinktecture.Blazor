@@ -29,6 +29,7 @@ public class ViewTransitionService : IViewTransitionService
     public async Task StartViewTransitionAsync(Task? beforeTransition = null, CancellationToken cancellationToken = default)
     {
         var module = await _moduleTask.Value;
+        _beforeTransition?.Dispose();
         _beforeTransition = beforeTransition;
         await module.InvokeVoidAsync("startViewTransition", cancellationToken, DotNetObjectReference.Create(this), nameof(TransitionStarted));
         await _oldViewStateCompleted.Task;

@@ -38,7 +38,7 @@ The package can be used in Blazor WebAssembly projects.
 
 To make the `IViewTransitionService` available on all pages, register it at the IServiceCollection in `Program.cs` before the host is built:
 
-`builder.Services.AddViewTransitionServices();`
+`builder.Services.AddViewTransitionService();`
 
 ### Add to Imports
 

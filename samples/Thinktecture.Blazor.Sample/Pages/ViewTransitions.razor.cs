@@ -1,4 +1,3 @@
-using System.Net.Http.Json;
 using Fluxor;
 using Microsoft.AspNetCore.Components;
 using Thinktecture.Blazor.Sample.Models;

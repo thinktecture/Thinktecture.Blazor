@@ -18,7 +18,7 @@ You need .NET 7.0 or newer to use this library.
 
 ### Platform/Browser support
 
-Please note that ViewTransition API is not yet supported in all major browsers. [Here](https://caniuse.com/?search=ViewTransition%20API), you can find the current support.
+Please note that View Transition API is not yet supported in all major browsers. [Here](https://caniuse.com/mdn-api_viewtransition), you can find the current support.
 
 ### Installation
 

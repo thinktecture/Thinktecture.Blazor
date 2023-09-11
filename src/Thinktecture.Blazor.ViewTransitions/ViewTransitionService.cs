@@ -26,7 +26,7 @@ public class ViewTransitionService : IViewTransitionService
     /// <summary>
     /// Start view transition with the help of the View Transition API (https://drafts.csswg.org/css-view-transitions-1/) 
     /// </summary>
-    /// <param name="beforeTransition">Optinal: Task that is executed before the view transition is executed.</param>
+    /// <param name="beforeTransition">Optional: Task that is executed before the view transition is executed.</param>
     /// <param name="cancellationToken">CancellationToken</param>
     /// <returns></returns>
     public async Task StartViewTransitionAsync(Task? beforeTransition = null, CancellationToken cancellationToken = default)

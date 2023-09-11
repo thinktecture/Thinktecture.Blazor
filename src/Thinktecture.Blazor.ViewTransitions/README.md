@@ -78,7 +78,7 @@ The following steps are necessary for this:
 
 `[Inject] private IViewTransitionService _viewTransitionService { get; set; } = default!;`
 
-- To perform a view transition, use the method `StartViewTransitionAsync`. This takes two parameters.
+- To perform a view transition, use the method `StartViewTransitionAsync()`. This takes two parameters.
 
     - The first parameter is a task. This Task specifies when the transition can be performed. That means the new view is ready, and the transition can start. Please note that the ViewTransitionAPI must first take a screenshot of the current state before the DOM is changed. The following example opens a dialog. Method `StartViewTransitionAsync`, passed as a task, first waits briefly before setting the necessary parameters.
 

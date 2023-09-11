@@ -70,7 +70,7 @@ For this, you must add the component `RoutingViewTransition` to App.razor.
 </Router>
 ```
 
-### Manual ViewTransition
+### Manual view transition
 
 The second option is to start the `ViewTransitionAPI` using the IViewTransitionService.
 The following steps are necessary for this:

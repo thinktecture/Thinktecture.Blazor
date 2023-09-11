@@ -72,7 +72,7 @@ For this, you must add the component `RoutingViewTransition` to App.razor.
 
 ### Manual view transition
 
-The second option is to start the `ViewTransitionAPI` using the IViewTransitionService.
+The second option is to start the View Transition API using the IViewTransitionService.
 The following steps are necessary for this:
 - Add the IViewTransitionService to the component or class using DependencyInjection.
 

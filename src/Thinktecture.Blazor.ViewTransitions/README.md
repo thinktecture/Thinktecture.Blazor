@@ -26,7 +26,7 @@ Please note that View Transition API is not yet supported in all major browsers.
 You can install the package via NuGet with the Package Manager in your IDE or alternatively using the command line:
 
 ```
-dotnet add package Pazor.ViewTransitionApi
+dotnet add package Thinktecture.Blazor.ViewTransitions
 ```
 
 

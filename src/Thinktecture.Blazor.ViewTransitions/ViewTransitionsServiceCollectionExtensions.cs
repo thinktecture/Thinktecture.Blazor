@@ -8,7 +8,7 @@ public static class ViewTransitionsServiceCollectionExtensions
     /// Adds all necessary services needed for the ViewTransition API
     /// </summary>
     /// <param name="services"></param>
-    public static void AddViewTransitionServices(this IServiceCollection services)
+    public static void AddViewTransitionService(this IServiceCollection services)
     {
         services.AddScoped<IViewTransitionService, ViewTransitionService>();
     }

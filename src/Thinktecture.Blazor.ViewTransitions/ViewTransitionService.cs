@@ -7,7 +7,7 @@ public class ViewTransitionService : IViewTransitionService
     private readonly Lazy<ValueTask<IJSInProcessObjectReference>> _moduleTask;
     private TaskCompletionSource _oldViewStateCompleted = new(TaskCreationOptions.RunContinuationsAsynchronously);
     private Task? _beforeTransition;
-    private SemaphoreSlim _semaphore;
+    private SemaphoreSlim? _semaphore;
 
 
     public ViewTransitionService(IJSRuntime jSRuntime)

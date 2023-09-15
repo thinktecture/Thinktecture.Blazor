@@ -1,6 +1,10 @@
 ﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 @import '_content/Thinktecture.Blazor.PwaUpdate/Thinktecture.Blazor.PwaUpdate.bundle.scp.css';
 
+:root {
+    --view-transition-duration: 300ms;
+}
+
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -20,6 +24,7 @@ a, .btn-link {
 }
 
 .content {
+    position: relative;
     padding-top: 1.1rem;
 }
 
@@ -97,3 +102,76 @@ a, .btn-link {
         content: var(--blazor-load-percentage-text, "Loading");
     }
 
+
+/*VIEW TRANSTIONS ANIMATIONS*/
+::view-transition-group(*) {
+    animation-duration: 300ms;
+}
+
+:root::view-transition-image-pair(*) {
+    position: absolute;
+    inset: 0;
+    isolation: isolate;
+    animation-duration: inherit;
+    animation-fill-mode: inherit;
+}
+
+::view-transition-new(user-info):only-child {
+    animation: from-bottom-to-top var(--view-transition-duration) ease;
+}
+
+::view-transition-old(user-info):only-child {
+    animation: from-top-to-bottom var(--view-transition-duration) ease;
+}
+
+::view-transition-new(details-back):only-child {
+    animation: slide-in-from-left var(--view-transition-duration) ease;
+}
+
+::view-transition-old(details-back):only-child {
+    animation: slide-out-from-left var(--view-transition-duration) ease;
+}
+
+@keyframes from-top-to-bottom {
+    from {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(200%);
+        opacity: 0;
+    }
+}
+
+@keyframes from-bottom-to-top {
+    from {
+        transform: translateY(200%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-from-left {
+    from {
+        transform: translateX(-500%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-out-from-left {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-500%);
+    }
+}

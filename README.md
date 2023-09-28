@@ -22,6 +22,14 @@ The Web Share API allows you to share a text, title, URL, or files with another 
 
 This package allows you to display a notification as soon as an update of your application is ready for installation.
 
+## [Thinktecture.Blazor.ViewTransitions](src/Thinktecture.Blazor.ViewTransitions/README.md)
+
+This package allows you to use the view transitions api to be able to support your interactions in the application with animations.
+
+## [Thinktecture.Blazor.ScreenWakeLock](src/Thinktecture.Blazor.ScreenWakeLock/README.md)
+
+The Screen Wake Lock API provides a way to prevent devices from dimming or locking the screen when an application needs to keep running.
+
 ## [Thinktecture.Blazor.GrpcWeb.DevTools](src/Thinktecture.Blazor.GrpcWeb.DevTools/README.md)
 
 Connect your Blazor App with gRPC-Web Developer Tools.

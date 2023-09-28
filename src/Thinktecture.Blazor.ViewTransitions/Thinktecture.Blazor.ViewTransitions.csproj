@@ -4,6 +4,19 @@
         <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+
+        <Title>Blazor View Transitions API wrapper</Title>
+        <Description>View Transitions API wrapper implementation for Blazor.</Description>
+        <PackageId>Thinktecture.Blazor.ViewTransitions</PackageId>
+        <Version>1.0.0</Version>
+        <PackageIcon>icon.png</PackageIcon>
+        <Authors>Patrick Jahr, Christian Liebel</Authors>
+        <Company>Thinktecture</Company>
+        <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageTags>JavaScript API ViewTransitionsAPI View Transitions Blazor Wasm Wrapper JSInterop</PackageTags>
+        <RepositoryUrl>https://github.com/thinktecture/Thinktecture.Blazor</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
     </PropertyGroup>
 
 

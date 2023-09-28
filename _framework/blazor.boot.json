@@ -75,9 +75,9 @@
       "Thinktecture.Blazor.Badging.dll": "sha256-DJaVuaBz2y+m+UETxR+Ff40V0s2ZUH5CxJyk5j0wAgo=",
       "Thinktecture.Blazor.FileHandling.dll": "sha256-InGHkkpWDejGNJVzkvZk\/wwIipNNtQandzA\/16P89y4=",
       "Thinktecture.Blazor.PwaUpdate.dll": "sha256-7I4qvh3UjmCoS9YhLrT4VBkBNmkZZuSw1rWsvU84tvg=",
-      "Thinktecture.Blazor.Sample.dll": "sha256-PbpfEPXAphPzl+dDOVJNsUNni7zndPNdJ8AK1JH99KY=",
-      "Thinktecture.Blazor.ScreenWakeLock.dll": "sha256-wE72d7u+4cJWdID5+a2C1H97bMSCzlTR3Tk+Uw\/M59U=",
-      "Thinktecture.Blazor.ViewTransitions.dll": "sha256-yyU7I+gI+m04SM+HEiVtLUKjECPJ+zAvox1HBcBVy5Q=",
+      "Thinktecture.Blazor.Sample.dll": "sha256-TBSgNpuGWtqQ80Dm6ojWh1kE6r0vZh7drjJZ1WfaG8c=",
+      "Thinktecture.Blazor.ScreenWakeLock.dll": "sha256-HKxg9voI1GfXNHrcQL55xrx0voGqbyxi9TG\/jg6JcAw=",
+      "Thinktecture.Blazor.ViewTransitions.dll": "sha256-VUfYtV2FC2A\/NfwKjI7D8U7byYz1RH+M\/RyYup0RaXs=",
       "Thinktecture.Blazor.WebShare.dll": "sha256-jf38mWOLvsVGmABpQS2jh8\/K006ukmoTaS2OMBmzTrQ="
     },
     "extensions": null,

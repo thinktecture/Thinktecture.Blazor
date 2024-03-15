@@ -20,21 +20,21 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 7.0.x
-          
+
       # Install dotnet wasm buildtools workload
       - name: Install .NET WASM Build Tools
         run: dotnet workload install wasm-tools
-          
+
       # Publishes Blazor project to the release-folder
       - name: Publish .NET Core Project
-        run: dotnet publish samples/PatrickJahr.Blazor.Sample/PatrickJahr.Blazor.Sample.csproj -c:Release -p:GHPages=true -o dist/Web --nologo
+        run: dotnet publish samples/Thinktecture.Blazor.Sample/Thinktecture.Blazor.Sample.csproj -c:Release -p:GHPages=true -o dist/Web --nologo
 
-      # changes the base-tag in index.html from '/' to 'PatrickJahr.Blazor' to match GitHub Pages repository subdirectory
+      # changes the base-tag in index.html from '/' to 'Thinktecture.Blazor' to match GitHub Pages repository subdirectory
       - name: Rewrite base href
         uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
         with:
           html_path: dist/Web/wwwroot/index.html
-          base_href: /PatrickJahr.Blazor/
+          base_href: /Thinktecture.Blazor/
 
       # copy index.html to 404.html to serve the same file when a file is not found
       - name: copy index.html to 404.html

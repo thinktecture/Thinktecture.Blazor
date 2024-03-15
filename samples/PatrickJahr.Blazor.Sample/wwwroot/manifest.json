@@ -1,0 +1,29 @@
+{
+  "name": "PatrickJahr.Blazor.Sample",
+  "short_name": "PatrickJahr.Blazor.Sample",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#03173d",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "./file-handling",
+      "accept": {
+        "text/plain": [".txt"]
+      }
+    }
+  ]
+}

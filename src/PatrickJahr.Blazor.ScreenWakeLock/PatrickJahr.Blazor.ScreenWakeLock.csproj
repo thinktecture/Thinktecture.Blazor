@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+
+        <Title>Blazor Screen Wake Lock API wrapper</Title>
+        <Description>Screen Wake Lock API wrapper implementation for Blazor.</Description>
+        <PackageId>PatrickJahr.Blazor.ScreenWakeLock</PackageId>
+        <Version>1.0.0</Version>
+        <PackageIcon>icon.png</PackageIcon>
+        <Authors>Patrick Jahr, Christian Liebel</Authors>
+        <Company>PatrickJahr</Company>
+        <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageTags>Project Fugu API ScreenWakeLockAPI Screen Wake Lock Blazor Wasm Wrapper JSInterop</PackageTags>
+        <RepositoryUrl>https://github.com/PatrickJahr/PatrickJahr.Blazor</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+        <SupportedPlatform Include="browser" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.5" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="README.md">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+        <None Include="..\..\icon.png">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+    </ItemGroup>
+
+</Project>

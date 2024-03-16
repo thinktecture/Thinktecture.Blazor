@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using PatrickJahr.Blazor.AsyncClipboard;
 using PatrickJahr.Blazor.Badging;
+using PatrickJahr.Blazor.BarcodeDetection;
 using PatrickJahr.Blazor.FileHandling;
 using PatrickJahr.Blazor.PwaUpdate;
 using PatrickJahr.Blazor.Sample;
@@ -22,6 +23,7 @@ builder.Services.AddFluxor(options =>
 });
 builder.Services.AddAsyncClipboardService();
 builder.Services.AddBadgingService();
+builder.Services.AddBarcodeDetectionService();
 builder.Services.AddFileHandlingService();
 builder.Services.AddWebShareService();
 builder.Services.AddUpdateService();

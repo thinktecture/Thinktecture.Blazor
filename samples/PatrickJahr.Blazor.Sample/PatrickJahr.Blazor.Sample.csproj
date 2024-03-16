@@ -7,6 +7,7 @@
     <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <ItemGroup>
     <PackageReference Include="Fluxor.Blazor.Web" Version="5.9.0" />
     <PackageReference Include="Fluxor.Blazor.Web.ReduxDevTools" Version="5.9.0" />
@@ -17,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\PatrickJahr.Blazor.AsyncClipboard\PatrickJahr.Blazor.AsyncClipboard.csproj" />
     <ProjectReference Include="..\..\src\PatrickJahr.Blazor.Badging\PatrickJahr.Blazor.Badging.csproj" />
+    <ProjectReference Include="..\..\src\PatrickJahr.Blazor.BarcodeDetection\PatrickJahr.Blazor.BarcodeDetection.csproj" />
     <ProjectReference Include="..\..\src\PatrickJahr.Blazor.FileHandling\PatrickJahr.Blazor.FileHandling.csproj" />
     <ProjectReference Include="..\..\src\PatrickJahr.Blazor.PwaUpdate\PatrickJahr.Blazor.PwaUpdate.csproj" />
     <ProjectReference Include="..\..\src\PatrickJahr.Blazor.ScreenWakeLock\PatrickJahr.Blazor.ScreenWakeLock.csproj" />

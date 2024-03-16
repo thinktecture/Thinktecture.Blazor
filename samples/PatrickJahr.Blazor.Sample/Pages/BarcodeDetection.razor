@@ -1,0 +1,10 @@
+@page "/bar-code-detection"
+
+@if (_isSupported) {
+    @foreach (var barcode in _barcodes)
+    {
+        <p>@barcode</p>
+    }
+} else {
+    <p>Barcode is not supported!</p>
+}

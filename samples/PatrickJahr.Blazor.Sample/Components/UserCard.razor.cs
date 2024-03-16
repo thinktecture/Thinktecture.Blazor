@@ -5,7 +5,7 @@ namespace PatrickJahr.Blazor.Sample.Components;
 
 public partial class UserCard
 {
-    [Parameter, EditorRequired] public User User { get; set; }
+    [Parameter, EditorRequired] public User User { get; set; } = default!;
     [Parameter] public bool Active { get; set; }
     [Parameter] public string CssClass { get; set; } = string.Empty;
 }

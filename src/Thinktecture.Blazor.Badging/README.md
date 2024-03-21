@@ -1,3 +1,7 @@
+⚠️ **This package is deprecated and will no longer receive updates.**
+
+We recommend migrating to the new package, [PatrickJahr.Badging](https://www.nuget.org/packages/PatrickJahr.Blazor.Badging/), which offers improved features and better compatibility with the latest Blazor versions.
+
 # Thinktecture.Blazor.Badging
 
 [![NuGet Downloads (official NuGet)](https://img.shields.io/nuget/dt/Thinktecture.Blazor.Badging?label=NuGet%20Downloads)](https://www.nuget.org/packages/Thinktecture.Blazor.Badging/)

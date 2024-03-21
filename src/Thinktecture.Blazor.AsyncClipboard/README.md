@@ -1,3 +1,7 @@
+⚠️ **This package is deprecated and will no longer receive updates.**
+
+We recommend migrating to the new package, [PatrickJahr.AsyncClipboard](https://www.nuget.org/packages/PatrickJahr.Blazor.AsyncClipboard/), which offers improved features and better compatibility with the latest Blazor versions.
+
 # Thinktecture.Blazor.AsyncClipboard
 
 [![NuGet Downloads (official NuGet)](https://img.shields.io/nuget/dt/Thinktecture.Blazor.AsyncClipboard?label=NuGet%20Downloads)](https://www.nuget.org/packages/Thinktecture.Blazor.AsyncClipboard/)
@@ -59,7 +63,7 @@ else
 ```
 
 Internally, this method tests for the presence of the `write()` method on the `navigator.clipboard` object of the target browser.
-This method allows copying (more or less) arbitrary data to the clipboard. 
+This method allows copying (more or less) arbitrary data to the clipboard.
 Please note that Firefox only supports the `writeText()` method which writes plain text to the clipboard.
 If you want to support browsers that only ship with support for `writeText()`, please implement a custom check.
 
@@ -103,7 +107,7 @@ With the following JavaScript code:
 
 ```js
 export function getTextPromise() {
-    return new Promise((resolve) => resolve("Hello world"));
+  return new Promise((resolve) => resolve("Hello world"));
 }
 ```
 

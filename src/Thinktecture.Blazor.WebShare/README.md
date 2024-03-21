@@ -1,3 +1,7 @@
+⚠️ **This package is deprecated and will no longer receive updates.**
+
+We recommend migrating to the new package, [PatrickJahr.WebShare](https://www.nuget.org/packages/PatrickJahr.Blazor.WebShare/), which offers improved features and better compatibility with the latest Blazor versions.
+
 # Thinktecture.Blazor.WebShare
 
 [![NuGet Downloads (official NuGet)](https://img.shields.io/nuget/dt/Thinktecture.Blazor.WebShare?label=NuGet%20Downloads)](https://www.nuget.org/packages/Thinktecture.Blazor.WebShare/)
@@ -93,7 +97,7 @@ Please note that the `CanShareAsync()` method throws an exception if the `canSha
 ### Sharing data
 
 To share the data, call the `ShareAsync()` method and pass an instance of `WebShareDataModel` to it.
-Please note that this method may throw an exception in case the `share()` method is not supported by the target platform, the user agent does not support sharing the data, or the user denied sharing it (e.g., by dismissing the share sheet). 
+Please note that this method may throw an exception in case the `share()` method is not supported by the target platform, the user agent does not support sharing the data, or the user denied sharing it (e.g., by dismissing the share sheet).
 
 ```csharp
 try
@@ -122,8 +126,8 @@ The following JavaScript function generates a plain text file with `foo` as its 
 
 ```js
 export function generateSampleFile() {
-    const blob = new Blob(['foo'], { type: 'text/plain' });
-    return new File([blob], 'text.txt', { type: blob.type });
+  const blob = new Blob(["foo"], { type: "text/plain" });
+  return new File([blob], "text.txt", { type: blob.type });
 }
 ```
 

@@ -1,3 +1,7 @@
+⚠️ **This package is deprecated and will no longer receive updates.**
+
+We recommend migrating to the new package, [PatrickJahr.ScreenWakeLock](https://www.nuget.org/packages/PatrickJahr.Blazor.ScreenWakeLock/), which offers improved features and better compatibility with the latest Blazor versions.
+
 # Thinktecture.Blazor.ScreenWakeLock
 
 [![NuGet Downloads (official NuGet)](https://img.shields.io/nuget/dt/Thinktecture.Blazor.ScreenWakeLock?label=NuGet%20Downloads)](https://www.nuget.org/packages/Thinktecture.Blazor.ScreenWakeLock/)
@@ -60,16 +64,16 @@ else
 ### Request screen wake lock
 
 To request a screen wake lock, you need to call the `RequestWakeLockAsync()` method from the `IScreenWakeLockService` service.
-The browser can refuse the request for various reasons (for example, because the battery charge level is too low), 
-so it's a good practice to wrap the call in a `try…catch` statement. 
+The browser can refuse the request for various reasons (for example, because the battery charge level is too low),
+so it's a good practice to wrap the call in a `try…catch` statement.
 The exception's message will contain more details in case of failure.
 
 ```csharp
-try 
+try
 {
     await _screenWakeLockService.RequestWakeLockAsync();
 }
-catch(Exception e) 
+catch(Exception e)
 {
     // Handle exxception
 }
@@ -89,17 +93,16 @@ As soon as the object was released the action `WakeLockReleased` will be fired.
 protected override async Task OnInitializedAsync()
 {
     //...
-    
+
     _screenWakeLockService.WakeLockReleased = () =>
     {
        _wakeLockRequested = false;
     };
-    
+
     //...
     await base.OnInitializedAsync();
 }
 ```
-
 
 ## Related articles
 

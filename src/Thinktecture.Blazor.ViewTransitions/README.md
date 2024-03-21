@@ -1,8 +1,13 @@
+⚠️ **This package is deprecated and will no longer receive updates.**
+
+We recommend migrating to the new package, [PatrickJahr.ViewTransitions](https://www.nuget.org/packages/PatrickJahr.Blazor.ViewTransitions/), which offers improved features and better compatibility with the latest Blazor versions.
+
 # Thinktecture.Blazor.ViewTransitions
 
 [![NuGet Downloads (official NuGet)](https://img.shields.io/nuget/dt/Thinktecture.Blazor.ViewTransitions?label=NuGet%20Downloads)](https://www.nuget.org/packages/Thinktecture.Blazor.ViewTransitions/)
 
 ## Introduction
+
 This package should help you to use the View Transition API in your Blazor application. The package contains two ways to use the View Transition API.
 If you want to know how the View Transition API works look [here](https://drafts.csswg.org/css-view-transitions/#viewtransition).
 
@@ -22,13 +27,11 @@ Please note that View Transition API is not yet supported in all major browsers.
 
 ### Installation
 
-
 You can install the package via NuGet with the Package Manager in your IDE or alternatively using the command line:
 
 ```
 dotnet add package Thinktecture.Blazor.ViewTransitions
 ```
-
 
 ## Usage
 
@@ -57,16 +60,16 @@ For this, you must add the component `RoutingViewTransition` to App.razor.
 <RoutingViewTransition />
 
 <Router AppAssembly="@typeof(App).Assembly">
-    <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
-        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
-    </Found>
-    <NotFound>
-        <PageTitle>Not found</PageTitle>
-        <LayoutView Layout="@typeof(MainLayout)">
-            <p role="alert">Sorry, there's nothing at this address.</p>
-        </LayoutView>
-    </NotFound>
+  <Found Context="routeData">
+    <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+    <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+  </Found>
+  <NotFound>
+    <PageTitle>Not found</PageTitle>
+    <LayoutView Layout="@typeof(MainLayout)">
+      <p role="alert">Sorry, there's nothing at this address.</p>
+    </LayoutView>
+  </NotFound>
 </Router>
 ```
 
@@ -74,39 +77,40 @@ For this, you must add the component `RoutingViewTransition` to App.razor.
 
 The second option is to start the View Transition API using the IViewTransitionService.
 The following steps are necessary for this:
+
 - Add the IViewTransitionService to the component or class using DependencyInjection.
 
 `[Inject] private IViewTransitionService _viewTransitionService { get; set; } = default!;`
 
 - To perform a view transition, use the method `StartViewTransitionAsync()`. This takes two parameters.
 
-    - The first parameter is a task. This Task specifies when the transition can be performed. That means the new view is ready, and the transition can start. Please note that the View Transition API must first take a screenshot of the current state before the DOM is changed. The following example opens a dialog. The method `StartViewTransitionAsync()`, passed as a task, first waits briefly before setting the necessary parameters.
+  - The first parameter is a task. This Task specifies when the transition can be performed. That means the new view is ready, and the transition can start. Please note that the View Transition API must first take a screenshot of the current state before the DOM is changed. The following example opens a dialog. The method `StartViewTransitionAsync()`, passed as a task, first waits briefly before setting the necessary parameters.
 
-    ```csharp
-    private async Task ShowDialog(User user)
-    {
-        await _viewTransitionService.StartViewTransitionAsync(
-            InternalShowDialog(user), 
-            CancellationToken.None);
-    }
+  ```csharp
+  private async Task ShowDialog(User user)
+  {
+      await _viewTransitionService.StartViewTransitionAsync(
+          InternalShowDialog(user),
+          CancellationToken.None);
+  }
 
-    private async Task InternalShowDialog(User user)
-    {
-        // New user is set and will dispatched
-        _dialogUser = user;
-        _dispatcher.Dispatch(new SelectUserAction(user));
-        // Wait for the first Screenshot of the current state
-        await Task.Delay(32);
-        // Reset the selected user. Because a view-transition-name css property may appear only once in the DOM.
-        _dispatcher.Dispatch(new SelectUserAction(null));
-        // Wait until the state has changed.
-        await Task.Delay(32);
-        _showDialog = true;
-        StateHasChanged();
-    }
-    ```
+  private async Task InternalShowDialog(User user)
+  {
+      // New user is set and will dispatched
+      _dialogUser = user;
+      _dispatcher.Dispatch(new SelectUserAction(user));
+      // Wait for the first Screenshot of the current state
+      await Task.Delay(32);
+      // Reset the selected user. Because a view-transition-name css property may appear only once in the DOM.
+      _dispatcher.Dispatch(new SelectUserAction(null));
+      // Wait until the state has changed.
+      await Task.Delay(32);
+      _showDialog = true;
+      StateHasChanged();
+  }
+  ```
 
-    - The second parameter is the `CancellationToken` to cancel the operation.
+  - The second parameter is the `CancellationToken` to cancel the operation.
 
 That's it. Just try it out, and feel free to give feedback :-)
 

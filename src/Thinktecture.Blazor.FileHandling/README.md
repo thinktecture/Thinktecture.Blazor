@@ -1,3 +1,7 @@
+⚠️ **This package is deprecated and will no longer receive updates.**
+
+We recommend migrating to the new package, [PatrickJahr.FileHandling](https://www.nuget.org/packages/PatrickJahr.Blazor.FileHandling/), which offers improved features and better compatibility with the latest Blazor versions.
+
 # Thinktecture.Blazor.FileHandling
 
 [![NuGet Downloads (official NuGet)](https://img.shields.io/nuget/dt/Thinktecture.Blazor.FileHandling?label=NuGet%20Downloads)](https://www.nuget.org/packages/Thinktecture.Blazor.FileHandling/)
@@ -69,12 +73,14 @@ The `action` property contains the address that should be launched when a file w
 
 ```json
 {
-  "file_handlers": [{
-    "action": "./",
-    "accept": {
-      "text/plain": [".txt"]
+  "file_handlers": [
+    {
+      "action": "./",
+      "accept": {
+        "text/plain": [".txt"]
+      }
     }
-  }]
+  ]
 }
 ```
 
@@ -100,10 +106,10 @@ if (isSupported)
             if (fileSystemHandle is FileSystemFileHandle fileSystemFileHandle)
             {
                 var file = await fileSystemFileHandle.GetFileAsync();
-    
+
                 var text1 = await file.TextAsync();
                 Console.WriteLine(text1);
-    
+
                 var bytes = await file.ArrayBufferAsync();
                 var text2 = System.Text.Encoding.UTF8.GetString(bytes);
                 Console.WriteLine(text2);

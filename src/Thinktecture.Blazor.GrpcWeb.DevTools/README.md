@@ -1,3 +1,7 @@
+⚠️ **This package is deprecated and will no longer receive updates.**
+
+We recommend migrating to the new package, [PatrickJahr.GrpcWeb.DevTools](https://www.nuget.org/packages/PatrickJahr.Blazor.GrpcWeb.DevTools/), which offers improved features and better compatibility with the latest Blazor versions.
+
 ## Introduction
 
 [![NuGet Downloads (official NuGet)](https://img.shields.io/nuget/dt/Thinktecture.Blazor.GrpcWeb.DevTools?label=NuGet%20Downloads)](https://www.nuget.org/packages/Thinktecture.Blazor.GrpcWeb.DevTools/)
@@ -21,7 +25,6 @@ You also need the gRPC-Web Developer Tools Chrome Extsion
 
 [Install gRPC-Web Developer Tools](https://chrome.google.com/webstore/detail/grpc-web-developer-tools/kanmilmfkjnoladbbamlclhccicldjaj)
 
-
 ### Platform support
 
 The gRPC-Web Developer Tools only available for Google Chrome and Microsoft Edge browser.
@@ -38,7 +41,6 @@ dotnet add package Thinktecture.Blazor.GrpcWebDevTools
 
 The package can be used in Blazor WebAssembly projects.
 
-
 ### Enable gRPC-Web Developer Tools on your project
 
 At first you have to register a `GrpcChannel` in your `ServiceCollection` like this:
@@ -46,12 +48,12 @@ At first you have to register a `GrpcChannel` in your `ServiceCollection` like t
 ```csharp
 builder.Services.AddScoped(services =>
 {
-    var channel = GrpcChannel.ForAddress(backendUrl, 
-        new GrpcChannelOptions 
-        { 
-            HttpHandler = new GrpcWebHandler(GrpcWebMode.GrpcWeb, new HttpClientHandler()) 
+    var channel = GrpcChannel.ForAddress(backendUrl,
+        new GrpcChannelOptions
+        {
+            HttpHandler = new GrpcWebHandler(GrpcWebMode.GrpcWeb, new HttpClientHandler())
         });
-        
+
     return channel;
 });
 ```

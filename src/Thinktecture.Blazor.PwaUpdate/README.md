@@ -1,5 +1,8 @@
-# Thinktecture.Blazor.PwaUpdate
+⚠️ **This package is deprecated and will no longer receive updates.**
 
+We recommend migrating to the new package, [PatrickJahr.PwaUpdate](https://www.nuget.org/packages/PatrickJahr.Blazor.PwaUpdate/), which offers improved features and better compatibility with the latest Blazor versions.
+
+# Thinktecture.Blazor.PwaUpdate
 
 [![NuGet Downloads (official NuGet)](https://img.shields.io/nuget/dt/Thinktecture.Blazor.PwaUpdate?label=NuGet%20Downloads)](https://www.nuget.org/packages/Thinktecture.Blazor.PwaUpdate/)
 
@@ -41,6 +44,7 @@ To make the UpdateService available on all pages, register it at the IServiceCol
 builder.Services.AddUpdateService();
 
 ```
+
 ### Add to Imports
 
 To use the default UpdateModal component on the hole app razor files, register it in the `_Imports.razor` file.
@@ -77,36 +81,36 @@ To use the default update modal, add the component to the main layout. For examp
 <UpdateModal InformationMessage="Update available!"></UpdateModal>
 
 ...
-
 ```
+
 As soon as an update is available, a modal will appear in the upper right corner as shown in the example.
 
 ![Pwa Update Model](../../images/update_sample.png)
 
-If you do not want to use the default layout, you can also pass a ChildContent, which will be displayed instead of the default. 
+If you do not want to use the default layout, you can also pass a ChildContent, which will be displayed instead of the default.
 
 ```html
 <UpdateModal>
-    <div>Update available!</div>
-    <button onclick="@Reload">Update</button>
+  <div>Update available!</div>
+  <button onclick="@Reload">Update</button>
 </UpdateModal>
 ```
 
 Another option is to override CSS variables:
+
 - The color of the close icon can be changed by this variable: `--close-icon-color`
-    - The color must be an rgb valur like this: `255, 255, 255`
+  - The color must be an rgb valur like this: `255, 255, 255`
 - The action button color can be changed by this variable: `--action-button-color`
-    - The color must be an rgb valur like this: `208, 188, 255`
+  - The color must be an rgb valur like this: `208, 188, 255`
 - The background color of the modal can be changed by this variable: `--modal-background`
 - The text color of the modal can be changed by this variable: `--on-modal-background`
 
 ### Update Service
 
-If you do not want to use the modal, you can also use only the update service. To do this, you can make the `IUpdateService` service available to the component, 
-page, or service via dependency injection. To receive the event for an update, simply register for the `UpdateAvailable` event. 
+If you do not want to use the modal, you can also use only the update service. To do this, you can make the `IUpdateService` service available to the component,
+page, or service via dependency injection. To receive the event for an update, simply register for the `UpdateAvailable` event.
 
 Then call the initialization method `InitializeServiceWorkerUpdateAsync` to start the registration of the `StateChanged` event of the service worker.
-
 
 ```csharp
 protected override async Task OnInitializedAsync()
@@ -116,8 +120,6 @@ protected override async Task OnInitializedAsync()
     ...
 }
 ```
-
-
 
 ## Acknowledgements
 

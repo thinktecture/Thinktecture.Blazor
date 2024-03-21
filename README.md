@@ -1,5 +1,9 @@
 # Thinktecture.Blazor
 
+⚠️ These packages are deprecated and will no longer receive updates. We recommend using the new packages at [PatrickJahr.Blazor](https://github.com/PatrickJahr/PatrickJahr.Blazor), which offer improved features and compatibility with the latest Blazor versions.
+
+---
+
 This repository contains the code for the following NuGet packages:
 
 ## [Thinktecture.Blazor.AsyncClipboard](src/Thinktecture.Blazor.AsyncClipboard/README.md)
